@@ -1,24 +1,20 @@
 import React from 'react';
 import {
   SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
-  Text,
-  useColorScheme,
-  View,
 } from 'react-native';
 import {
   responsiveFontSize as rf,
   heightPercentageToDP as hp,
 } from './src/common/responsiveFunction';
 import {COLORS} from './src/constants/them';
-import SignUp from './src/screens/Auth/SignUp';
+import MainNavigation from './src/navigation/MainNavigation';
+
 const App = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <SignUp />
-    </SafeAreaView>
+    // <SafeAreaView style={styles.container}>
+      <MainNavigation />
+    // </SafeAreaView>
   );
 };
 

@@ -16,6 +16,6 @@ const styles = StyleSheet.create({
     fontSize: rf(2),
   },
   container:{
-    marginTop:hp('3%')
+    // marginTop:hp('3%')
   }
 });

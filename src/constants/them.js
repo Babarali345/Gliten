@@ -25,7 +25,8 @@ export const COLORS = {
   greenishBlack: '#2b2b2b',
   skyBlue: '#72bacf',
   Greyscale:'#64748B',
-  placeHolderColor:'#94A3B8'
+  placeHolderColor:'#94A3B8',
+  tabBarLabel:'#64748B'
 };
 
 const appTheme = {COLORS};
@@ -34,24 +35,30 @@ export default appTheme;
 
 /* * Fonts * */
 export const FONTFAMILY = {
-  Light: 'Metropolis-Light',
-  Medium: 'Poppins-SemiBold',
-  Regular: 'Poppins-Regular',
-  Bold: 'Poppins-Bold',
-  BoldItalic: 'Product Sans Bold Italic',
-  Circularstd: 'Circular Std Font',
-  futur: 'Futura Heavy font',
+  Light: '',
+  Medium: 'Inter-Medium',
+  Regular: 'Inter-Regular',
+  Bold: 'Inter-Bold',
+  ExtraBold: 'Inter-ExtraBold',
+  SemiBold: 'Inter-SemiBold',
+ 
 };
 
 /* * Images * */
 export const IMAGES = {
   googleLogo:require('../assets/Images/googleLogo.png'),
   facebook_logo:require('../assets/Images/facebook-logo.png'),
+  BackImage:require('../assets/Images/BackImage.png'),
 };
 
 /* * Screens * */
 export const SCREENS = {
- 
+  SignUp:'SignUp',
+  BottomNavigation:'BottomNavigation',
+  Profile:'Profile',
+  ShortListed:'ShortListed',
+  Activity:'Activity',
+  Home:'Home'
 };
 
 export const STYLES = StyleSheet.create({

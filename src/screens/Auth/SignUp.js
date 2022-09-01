@@ -9,7 +9,6 @@ import {
 } from '../../common/responsiveFunction';
 import EditText from '../../compnanat/EditText';
 import Button from '../../compnanat/Button';
-import BackArrow from '../../compnanat/BackArrow';
 
 export default function SignUp() {
   return (
@@ -17,7 +16,6 @@ export default function SignUp() {
     contentContainerStyle={{paddingBottom:hp('5%')}}
     showsVerticalScrollIndicator={false}
     >
-        <BackArrow/>
       <Text style={styles.txt}>Get Started As Sign Board!</Text>
       <Text style={styles.txt2}>Create an account to continue.</Text>
       <EditText style={{marginTop: hp('2%')}} placeholder={'Username'} />
@@ -51,7 +49,9 @@ export default function SignUp() {
 
 const styles = StyleSheet.create({
   container: {
+    flex:1,
     paddingHorizontal: wp('3%'),
+    backgroundColor:COLORS.white
   },
   txt: {
     color: COLORS.black,
