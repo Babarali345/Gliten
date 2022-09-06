@@ -6,6 +6,7 @@ import SignUp from '../screens/Auth/SignUp';
 import {COLORS, SCREENS} from '../constants/them';
 import BackArrow from '../compnanat/BackArrow';
 import BottomNavigation from './BottomNavigation';
+import MyDrawer from './Drawer';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,10 +22,10 @@ function MainNavigation() {
           headerShadowVisible: false,
           headerLeft: () => <BackArrow />,
         }}>
-        <Stack.Screen name={SCREENS.BottomNavigation} component={BottomNavigation} 
+        <Stack.Screen name={SCREENS.MyDrawer} component={MyDrawer} 
         options={{headerShown:false}}
         />
-        <Stack.Screen name={SCREENS.SignUp} component={SignUp} />
+          <Stack.Screen name={SCREENS.SignUp} component={SignUp} />
       </Stack.Navigator>
     </NavigationContainer>
   );

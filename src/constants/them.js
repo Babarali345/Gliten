@@ -15,7 +15,7 @@ export const COLORS = {
   brownGrey: '#949494',
   blue: '#0037c1',
   brightYellow: '#fcf400',
-  golden: '#FFD700',
+  golden: '#F39C0F',
   veryLightPink: '#d5d5d5',
   halfpwhite: '#F8FAFC',
   transparent: 'transparent',
@@ -24,7 +24,7 @@ export const COLORS = {
   cranBerry: '#ab0030',
   greenishBlack: '#2b2b2b',
   skyBlue: '#72bacf',
-  Greyscale:'#64748B',
+  Greyscale:'#AEAEAE',
   placeHolderColor:'#94A3B8',
   tabBarLabel:'#64748B'
 };
@@ -58,7 +58,8 @@ export const SCREENS = {
   Profile:'Profile',
   ShortListed:'ShortListed',
   Activity:'Activity',
-  Home:'Home'
+  Home:'Home',
+  MyDrawer:'MyDrawer'
 };
 
 export const STYLES = StyleSheet.create({
