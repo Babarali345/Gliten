@@ -3,9 +3,9 @@ import React from 'react';
 import {COLORS} from '../constants/them';
 import { heightPercentageToDP as hp, responsiveFontSize as rf, widthPercentageToDP as wp} from '../common/responsiveFunction';
 
-export default function Button({title}) {
+export default function Button({title,style}) {
   return (
-    <TouchableOpacity style={styles.container}
+    <TouchableOpacity style={[styles.container,style]}
     activeOpacity={0.7}
     >
       <Text style={styles.txt}>{title}</Text>

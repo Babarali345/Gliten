@@ -1,12 +1,9 @@
 import {
-  FlatList,
-  Image,
   ImageBackground,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
-  Animated,
   ScrollView,
 } from 'react-native';
 import React from 'react';

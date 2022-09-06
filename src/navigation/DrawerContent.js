@@ -2,6 +2,7 @@ import {
   Image,
   Pressable,
   ScrollView,
+  StatusBar,
   StyleSheet,
   Text,
   View,
@@ -12,25 +13,54 @@ import {
   widthPercentageToDP as wp,
   responsiveFontSize as rf,
 } from '../common/responsiveFunction';
-import EditProfileIcon from '../compnanat/svg/EditProfile';
 import {COLORS, FONTFAMILY} from '../constants/them';
-import ProfilTickIcon from '../compnanat/svg/ProfilTickIcon';
-import DrawerContentHomeIcon from '../compnanat/svg/DrawerContentHomeIcon';
+import Login, { AboutUs, DrawerContentHomeIcon, EditProfileIcon,  PrivacyPolicy,  ProfilTickIcon, SignUp } from '../compnanat/svg';
+
 
 export default function DrawerContent() {
-
-    const NavOption=({title})=>{
-        return(
-            <View style={styles.naveOptionContainer}>
-<DrawerContentHomeIcon/>
-<Text style={[styles.txtnavTitle]}>{title}</Text>
-
-
-            </View>
-        )
-    }
+const Svg=(title)=>{
+  switch(title){
+    case 'Home':
+      return(
+        <DrawerContentHomeIcon/>
+      )
+    case 'About Us':
+      return(
+        <AboutUs/>
+      )
+    case 'Pricy Policy':
+      return(
+        <PrivacyPolicy/>
+      )
+    case 'Login':
+      return(
+        <Login/>
+      )
+    case 'Sign Up':
+      return(
+        <SignUp/>
+      )
+      
+  }
+  
+}
+  const NavOption = ({title}) => {
+    return (
+  <Pressable style={({pressed})=>[ {
+    opacity: pressed ? 0.7 : 1,
+  },styles.naveOptionContainer]}
+  onPress={()=>{
+ 
+  }}
+  >
+        {Svg(title)}
+        <Text style={[styles.txtnavTitle]}>{title}</Text>
+      </Pressable>
+    );
+  };
   return (
     <ScrollView>
+      
       <View style={styles.imageContainer}>
         <Image
           resizeMode="contain"
@@ -51,16 +81,17 @@ export default function DrawerContent() {
       </View>
       <View style={styles.nameContainer}>
         <Text style={styles.txtTitle}>William Corner</Text>
-      
+
         <ProfilTickIcon />
       </View>
-      <Text style={styles.txt2}>
-      Solo, Indonesia
-        </Text>
+      <Text style={styles.txt2}>Solo, Indonesia</Text>
       <View style={styles.ScreenContainer}>
-<NavOption title='Home'/>
-<NavOption title='About Us' />
-<NavOption title='Pricy Policy'/>
+        <NavOption title="Home" />
+        <NavOption title="About Us" />
+        <NavOption title="Pricy Policy" />
+        <Text style={styles.txtAccount}>Account</Text>
+        <NavOption title="Login" />
+        <NavOption title="Sign Up" />
       </View>
     </ScrollView>
   );
@@ -79,22 +110,21 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     alignSelf: 'center',
-    marginTop: hp('3%'),
+    marginTop: hp('5%'),
   },
   txtTitle: {
     color: COLORS.black,
     fontSize: rf(2),
     fontFamily: FONTFAMILY.Bold,
     alignSelf: 'center',
-    marginRight:wp('1%')
+    marginRight: wp('1%'),
   },
   txtnavTitle: {
     color: COLORS.black,
-    fontSize: rf(2),
-    fontFamily: FONTFAMILY.Bold,
+    fontSize: rf(1.5),
+    fontFamily: FONTFAMILY.SemiBold,
     alignSelf: 'center',
-    marginStart:wp('2%'),
-    
+    marginStart: wp('2%'),
   },
   nameContainer: {
     flexDirection: 'row',
@@ -105,11 +135,20 @@ const styles = StyleSheet.create({
     color: COLORS.placeHolderColor,
     fontSize: rf(1.5),
     fontFamily: FONTFAMILY.Medium,
-    textAlign:'center'
+    textAlign: 'center',
   },
-  naveOptionContainer:{
-    flexDirection:'row',
-    alignItems:'center',
-    marginTop:hp('1.5%')
-  }
+  naveOptionContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: hp('2%'),
+  },
+  ScreenContainer:{
+paddingLeft:wp('2%')
+  },
+  txtAccount: {
+    color: COLORS.placeHolderColor,
+    fontSize: rf(1.7),
+    fontFamily: FONTFAMILY.SemiBold,
+    marginTop: hp('1%'),
+  },
 });

@@ -86,6 +86,7 @@ flexDirection:'row',
     fontFamily: FONTFAMILY.Medium,
     marginTop: hp('4%'),
   },
+  
 });
 
 const Data = [
@@ -93,7 +94,7 @@ const Data = [
     id: 1,
     name: '3 BHK APARTMENT IN SHIVPUR',
     image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRztwpHnsGkLDTDPZ8xnagR4_99FT6rAeesqg&usqp=CAU',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1jct6rwkeE9-G4pgXxHXTNvEQ-hbz0VFsfA&usqp=CAU',
   },
   {
     id: 2,

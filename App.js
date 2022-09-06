@@ -1,8 +1,8 @@
 import React from 'react';
 import {
-  SafeAreaView,
   StyleSheet,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import {
   responsiveFontSize as rf,
   heightPercentageToDP as hp,
@@ -12,15 +12,15 @@ import MainNavigation from './src/navigation/MainNavigation';
 
 const App = () => {
   return (
-    // <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <MainNavigation />
-    // </SafeAreaView>
+     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+    flex: 1,
   },
   txt: {
     fontSize: rf(2),

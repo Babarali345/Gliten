@@ -11,11 +11,8 @@ import Profile from '../screens/BottomTab/Profile';
 import ShortListed from '../screens/BottomTab/ShortListed';
 import Activity from '../screens/BottomTab/Activity';
 import Home from '../screens/BottomTab/Home';
-import HomeSvg from '../compnanat/svg/Home';
-import ActivitySvg from '../compnanat/svg/Activity';
-import ShortListedSvg from '../compnanat/svg/Shortlisted';
-import ProfileSvg from '../compnanat/svg/Profile';
 import {Text} from 'react-native';
+import { ActivitySvg, HomeSvg, ProfileSvg, ShortListedSvg } from '../compnanat/svg';
 
 const Tab = createBottomTabNavigator();
 const CustomText = ({isFocused, label}) => {

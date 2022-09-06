@@ -26,7 +26,10 @@ export const COLORS = {
   skyBlue: '#72bacf',
   Greyscale:'#AEAEAE',
   placeHolderColor:'#94A3B8',
-  tabBarLabel:'#64748B'
+  tabBarLabel:'#64748B',
+  skyBlueLight:'#E0EEFF',
+  skyBlueDark:'#E5EBF3',
+  lightBlue:'#094C91'
 };
 
 const appTheme = {COLORS};
