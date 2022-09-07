@@ -32,7 +32,10 @@ const CustomText = ({isFocused, label}) => {
 export default function BottomNavigation() {
   return (
     <Tab.Navigator
-      screenOptions={{headerShown: false, tabBarStyle: {height: hp('8%')}}}>
+      screenOptions={{headerShown: false, tabBarStyle: {height: hp('8%')}
+      ,tabBarHideOnKeyboard:true,
+      tabBarLabelPosition:'below-icon'
+      }}>
       <Tab.Screen
         name={SCREENS.Home}
         component={Home}

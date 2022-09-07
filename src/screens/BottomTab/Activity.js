@@ -11,6 +11,8 @@ import {ListEmptySvg} from '../../compnanat/svg';
 import ActivityListEmptyComponanat from '../../compnanat/ActivityListEmptyComponanat';
 export default function Activity() {
   const [tabPressed, setTabPresed] = useState();
+  const [data,setData]=useState(Data)
+
   const rendorTab = ({item, index}) => {
     return (
       <Pressable
@@ -28,6 +30,18 @@ export default function Activity() {
         ]}
         onPress={() => {
           setTabPresed(index);
+          if(index===1){
+            setData([])
+          }
+          if(index===3){
+            setData([])
+          }
+          if(index===0){
+            setData(Data)
+          }
+          if(index===2){
+            setData(Data)
+          }
         }}>
         <Text style={styles.itemTxt}>{item.name}</Text>
       </Pressable>
@@ -78,7 +92,7 @@ export default function Activity() {
       </View>
       <View style={{flex: 1}}>
         <FlatList
-          data={Data}
+          data={data}
           renderItem={rendorActivity}
           contentContainerStyle={{
             paddingHorizontal: wp('2%'),
@@ -165,7 +179,7 @@ const styles = StyleSheet.create({
 const TabData = [
   {
     id: 1,
-    name: 'Searches (0)',
+    name: 'Searches (10)',
   },
   {
     id: 2,
@@ -173,7 +187,7 @@ const TabData = [
   },
   {
     id: 3,
-    name: 'Shortlist(0)',
+    name: 'Shortlist(5)',
   },
   {
     id: 4,

@@ -7,11 +7,15 @@ import {
   widthPercentageToDP as wp,
   responsiveFontSize as rf,
 } from '../common/responsiveFunction';
+import { useNavigation } from '@react-navigation/native';
 export default function Header({title, style}) {
+  const navigation=useNavigation()
   return (
     <View style={[styles.container,style]}>
       <Pressable style={({pressed}) => [{opacity: pressed ? 0.8 : 1}]}>
-        <MenueIcon/>
+      <MenueIcon onPress={()=>{
+         navigation.openDrawer()
+        }}/>
       </Pressable>
       <Text style={styles.txt}>{title}</Text>
     </View>

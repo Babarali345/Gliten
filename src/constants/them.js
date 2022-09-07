@@ -52,6 +52,7 @@ export const IMAGES = {
   googleLogo:require('../assets/Images/googleLogo.png'),
   facebook_logo:require('../assets/Images/facebook-logo.png'),
   BackImage:require('../assets/Images/BackImage.png'),
+  award:require('../assets/Images/award.png'),
 };
 
 /* * Screens * */

@@ -1,6 +1,6 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {Pressable} from 'react-native';
 import React from 'react';
-import {Svg, Path, Rect, Circle} from 'react-native-svg';
+import {Svg, Path, Rect, Circle,Image,Defs,Pattern,Use} from 'react-native-svg';
 import {COLORS} from '../../constants/them';
 
 export function ActivitySvg({focused}) {
@@ -242,21 +242,60 @@ export function SignUp() {
     </Svg>
   );
 }
-export function MenueIcon() {
+export function MenueIcon({onPress}) {
   return (
-    <Svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <Path d="M3 12H21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <Path d="M3 6H21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <Path d="M3 18H21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <Pressable
+    style={({pressed})=>[{
+      opacity:pressed?0.8:1
+    }]}
+    onPress={onPress}
+    >
+    <Svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <Path
+        d="M3 12H21"
+        stroke="black"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        d="M3 6H21"
+        stroke="black"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        d="M3 18H21"
+        stroke="black"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
     </Svg>
+    </Pressable>
   );
 }
 export function ListEmptySvg() {
   return (
-    <Svg width="123" height="204" viewBox="0 0 123 204" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <Path d="M60.6087 203.217C48.4869 203.217 44.8623 191.928 44.5652 186.283H79.3261C78.1376 191.928 72.7304 203.217 60.6087 203.217Z" fill="#F9BE21"/>
-    <Path d="M123 186.283H0L60.6087 124.783L123 186.283Z" fill="#3697DC"/>
-    <Path d="M60.6087 131.022V0" stroke="#3697DC" stroke-width="2"/>
+    <Svg
+      width="123"
+      height="204"
+      viewBox="0 0 123 204"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <Path
+        d="M60.6087 203.217C48.4869 203.217 44.8623 191.928 44.5652 186.283H79.3261C78.1376 191.928 72.7304 203.217 60.6087 203.217Z"
+        fill="#F9BE21"
+      />
+      <Path d="M123 186.283H0L60.6087 124.783L123 186.283Z" fill="#3697DC" />
+      <Path d="M60.6087 131.022V0" stroke="#3697DC" stroke-width="2" />
     </Svg>
   );
 }
+
