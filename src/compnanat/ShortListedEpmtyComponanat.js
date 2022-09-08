@@ -12,7 +12,9 @@ export default function ShortListEmptyComponanat() {
   return (
     <View style={styles.container}>
       <View style={styles.svgContainer}>
-        <Image source={IMAGES.award} style={styles.image} />
+        <Image source={IMAGES.award} style={styles.image}
+        resizeMode='contain'
+        />
         <Text style={styles.txt1}>You Haven’t Shortlisted any Properties</Text>
         <Text style={styles.txt2}>
         Your search history will appear here. its seems you have not yet Started your Search on our portal

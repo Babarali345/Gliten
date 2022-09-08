@@ -1,14 +1,16 @@
 import {Pressable, StyleSheet, Text, TextInput, View} from 'react-native';
 import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {COLORS, FONTFAMILY, STYLES} from '../constants/them';
+import {COLORS, FONTFAMILY, SCREENS, STYLES} from '../constants/them';
 import {
   responsiveFontSize as rf,
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from '../common/responsiveFunction';
+import { useNavigation } from '@react-navigation/native';
 
 export default function SearchBar({style}) {
+  const navigation=useNavigation()
   return (
     <Pressable
       style={({pressed}) => [
@@ -20,7 +22,7 @@ export default function SearchBar({style}) {
         STYLES.shadow,
       ]}
       onPress={()=>{
-        
+        navigation.navigate(SCREENS.FilterProperty)
       }}
       >
       <TextInput

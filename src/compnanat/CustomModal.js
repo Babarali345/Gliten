@@ -1,12 +1,13 @@
-import { useEffect } from 'react';
+import React, {useEffect, useRef} from 'react';
 import {
   StyleSheet,
-  Text,
+  Button,
   View,
-  Modal,
+  Dimensions,
+  Animated,
+  Easing,
   TouchableOpacity,
- Animated,
- Easing
+  Text,
 } from 'react-native';
 import ImagePicker from 'react-native-image-crop-picker';
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -17,15 +18,26 @@ import {
   widthPercentageToDP as wp,
 } from '../common/responsiveFunction';
 import {COLORS, FONTFAMILY} from '../constants/them';
-export default function ImageUploadModal({modalVisible, setModalVisible}) {
-    
+export default function Modal({visible, options, setVisible,handleImageData}) {
+  const {height} = Dimensions.get('screen');
+  const startPointY = options?.from === 'top' ? -height : height;
+  const transY = useRef(new Animated.Value(0));
+
   const profilePicture = () => {
     ImagePicker.openCamera({
       width: 300,
       height: 400,
       cropping: true,
     }).then(res => {
-      setUpdatedPicture(res.path);
+       
+        Animated.timing(transY.current, {
+          toValue: startPointY,
+          duration: 2000,
+          easing: Easing.inOut(Easing.ease),
+          useNativeDriver: true,
+        }).start();
+        setVisible(false);
+        handleImageData(res)
     });
   };
 
@@ -35,27 +47,69 @@ export default function ImageUploadModal({modalVisible, setModalVisible}) {
       height: 400,
       cropping: true,
     }).then(res => {
-      setUpdatedPicture(res.path);
+        Animated.timing(transY.current, {
+          toValue: startPointY,
+          duration: 2000,
+          easing: Easing.inOut(Easing.ease),
+          useNativeDriver: true,
+        }).start();
+        setVisible(false);
+      handleImageData(res)
     });
   };
+  useEffect(() => {
+    if (visible) {
+      startAnimation(0);
+    }
+  }, [visible]);
+
+  const startAnimation = toValue => {
+    Animated.timing(transY.current, {
+      toValue,
+      duration: 350,
+      easing: Easing.inOut(Easing.ease),
+      useNativeDriver: true,
+    }).start();
+  };
+
+  const onPress = () => {
+    setVisible(false);
+    Animated.timing(transY.current, {
+      toValue: startPointY,
+      duration: 2000,
+      easing: Easing.inOut(Easing.ease),
+      useNativeDriver: true,
+    }).start();
+  };
+
+  
+  const generateBackgroundOpacity = () => {
+    if (startPointY >= 0) {
+      return transY.current.interpolate({
+        inputRange: [0, startPointY],
+        outputRange: [0.8, 0],
+        extrapolate: 'clamp',
+      });
+    } else {
+      return transY.current.interpolate({
+        inputRange: [startPointY, 0],
+        outputRange: [0, 0.8],
+        extrapolate: 'clamp',
+      });
+    }
+  };
+
   return (
-    <Modal
-      animationType="slide"
-      transparent={true}
-      visible={modalVisible}
-      onRequestClose={() => {
-        setModalVisible(!modalVisible);
-      }}>
-      <View style={[styles.centeredView,]}>
-        <Animated.View style={[styles.modalView,{}]}>
+    <>
+      <Animated.View
+        style={[
+          styles.container,
+          {transform: [{translateY: transY.current}]},
+        ]}>
+        <View style={[styles.modalView, {}]}>
           <View style={styles.closeIconContainer}>
             <Text style={styles.txt}>Choose your action</Text>
-            <TouchableOpacity
-              activeOpacity={0.8}
-              onPress={() => {
-                setModalVisible(false);
-               
-              }}>
+            <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
               <MaterialIcons name="close" size={rf(3)} color={COLORS.black} />
             </TouchableOpacity>
           </View>
@@ -82,22 +136,41 @@ export default function ImageUploadModal({modalVisible, setModalVisible}) {
               </View>
             </TouchableOpacity>
           </View>
-        </Animated.View>
-      </View>
-    </Modal>
+        </View>
+      </Animated.View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  centeredView: {
-    flex: 1,
+  outerContainer: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+  },
+  container: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    left: 0,
+    bottom: 0,
     justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  innerContainer: {
+    // width: '70%',
+    // height: '20%',
+    backgroundColor: 'red',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 20,
   },
   modalView: {
     backgroundColor: COLORS.white,
     borderTopLeftRadius: wp('3%'),
     borderTopRightRadius: wp('3%'),
     padding: wp(3),
+    width: '100%',
     shadowColor: 'black',
     shadowOffset: {
       width: 10,

@@ -35,7 +35,7 @@ export default function Home({navigation}) {
           style={styles.linearGradient}>
           <View style={styles.menueContainer}>
             <TouchableOpacity
-              activeOpacity={0.7}
+              activeOpacity={0.8}
               onPress={() => {
                 navigation.openDrawer();
               }}>
@@ -45,7 +45,16 @@ export default function Home({navigation}) {
                 style={styles.menueIcon}
               />
             </TouchableOpacity>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              style={styles.postProperty}
+              onPress={() => {
+                
+              }}>
+
+            {/* <Text style={[styles.postPropert,{fontSize:rf(1),alignSelf:'flex-end'}]}>Find</Text> */}
             <Text style={styles.postPropert}>Post Property</Text>
+              </TouchableOpacity>
           </View>
           <SearchBar
             style={{
@@ -109,4 +118,13 @@ const styles = StyleSheet.create({
   txtSeeAll: {
     color: COLORS.primary,
   },
+  postProperty:{
+    backgroundColor:COLORS.golden,
+    paddingHorizontal:wp('2.5%'),
+    paddingVertical:hp('0.5%'),
+    borderRadius:wp('4%'),
+    alignItems:'center',
+    justifyContent:'center'
+
+  }
 });

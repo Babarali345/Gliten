@@ -63,7 +63,8 @@ export const SCREENS = {
   ShortListed:'ShortListed',
   Activity:'Activity',
   Home:'Home',
-  MyDrawer:'MyDrawer'
+  MyDrawer:'MyDrawer',
+  FilterProperty:'FilterProperty'
 };
 
 export const STYLES = StyleSheet.create({

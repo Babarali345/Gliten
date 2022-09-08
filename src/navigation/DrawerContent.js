@@ -13,11 +13,11 @@ import {
   widthPercentageToDP as wp,
   responsiveFontSize as rf,
 } from '../common/responsiveFunction';
-import {COLORS, FONTFAMILY} from '../constants/them';
+import {COLORS, FONTFAMILY, SCREENS} from '../constants/them';
 import Login, { AboutUs, DrawerContentHomeIcon, EditProfileIcon,  PrivacyPolicy,  ProfilTickIcon, SignUp } from '../compnanat/svg';
 
 
-export default function DrawerContent() {
+export default function DrawerContent({navigation}) {
 const Svg=(title)=>{
   switch(title){
     case 'Home':
@@ -44,14 +44,12 @@ const Svg=(title)=>{
   }
   
 }
-  const NavOption = ({title}) => {
+  const NavOption = ({title,onPress}) => {
     return (
   <Pressable style={({pressed})=>[ {
     opacity: pressed ? 0.7 : 1,
   },styles.naveOptionContainer]}
-  onPress={()=>{
- 
-  }}
+  onPress={onPress}
   >
         {Svg(title)}
         <Text style={[styles.txtnavTitle]}>{title}</Text>
@@ -75,7 +73,11 @@ const Svg=(title)=>{
               opacity: pressed ? 0.8 : 1,
             },
             styles.editIconContainer,
-          ]}>
+          ]}
+          onPress={()=>{
+            navigation.navigate(SCREENS.Profile)
+          }}
+          >
           <EditProfileIcon />
         </Pressable>
       </View>
@@ -86,7 +88,10 @@ const Svg=(title)=>{
       </View>
       <Text style={styles.txt2}>Solo, Indonesia</Text>
       <View style={styles.ScreenContainer}>
-        <NavOption title="Home" />
+        <NavOption title="Home" onPress={()=>{
+          navigation.navigate(SCREENS.Home)
+        }}
+        />
         <NavOption title="About Us" />
         <NavOption title="Pricy Policy" />
         <Text style={styles.txtAccount}>Account</Text>
