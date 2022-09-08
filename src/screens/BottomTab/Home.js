@@ -96,11 +96,11 @@ const styles = StyleSheet.create({
   menueIcon: {
     fontSize: rf(2),
   },
-  postPropert: {
-    fontSize: rf(1.5),
-    color: COLORS.white,
-    fontFamily: FONTFAMILY.SemiBold,
-  },
+    postPropert: {
+      fontSize: rf(1.5),
+      color: COLORS.white,
+      fontFamily: FONTFAMILY.SemiBold,
+    },
   txt: {
     color: COLORS.black,
     fontSize: rf(2.2),

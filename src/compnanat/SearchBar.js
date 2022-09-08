@@ -22,7 +22,7 @@ export default function SearchBar({style}) {
         STYLES.shadow,
       ]}
       onPress={()=>{
-        navigation.navigate(SCREENS.FilterProperty)
+        navigation.navigate(SCREENS.FilterTabs)
       }}
       >
       <TextInput

@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-export default function FilterProperty() {
+export default function Commercial() {
   return (
     <View>
-      <Text>FilterProperty</Text>
+      <Text>Commercial</Text>
     </View>
   )
 }

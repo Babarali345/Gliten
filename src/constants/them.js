@@ -64,7 +64,9 @@ export const SCREENS = {
   Activity:'Activity',
   Home:'Home',
   MyDrawer:'MyDrawer',
-  FilterProperty:'FilterProperty'
+  Residential:'Residential',
+  FilterTabs:'FilterTabs',
+  Commercial:'Commercial'
 };
 
 export const STYLES = StyleSheet.create({

@@ -298,4 +298,12 @@ export function ListEmptySvg() {
     </Svg>
   );
 }
+export function FilterSearchIcon() {
+  return (
+    <Svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <Path d="M11.5 14C14.5376 14 17 11.5376 17 8.5C17 5.46243 14.5376 3 11.5 3C8.46243 3 6 5.46243 6 8.5C6 11.5376 8.46243 14 11.5 14Z" stroke="#094C91" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <Path d="M11.5 14V21" stroke="#094C91" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </Svg>
+  );
+}
 
