@@ -1,19 +1,40 @@
-import {FlatList, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  ScrollView,
+  Switch,
+} from 'react-native';
 import React, {useState} from 'react';
-import {COLORS, FONTFAMILY} from '../../constants/them';
+import {COLORS, FONTFAMILY, SCREENS} from '../../constants/them';
 import {
   heightPercentageToDP as hp,
   responsiveFontSize as rf,
   widthPercentageToDP as wp,
 } from '../../common/responsiveFunction';
 import FilterSearchBar from '../../compnanat/FilterSearchBar';
-import MultiSlider from '@ptomasroos/react-native-multi-slider'
-export default function Residential() {
+import Budget from '../../compnanat/BudgetList';
+import NoOfBedroomList from '../../compnanat/NoOfBedroomList';
+import TypeOfProperty from '../../compnanat/TypeOfProperty';
+import BuildYear from '../../compnanat/BuildYear';
+import Locality from '../../compnanat/Locality';
+import Amenities from '../../compnanat/Amenities';
+import Furnished_Area from '../../compnanat/Furnished_Area';
+import Area from '../../compnanat/Area';
+import Possesion_Status from '../../compnanat/Possesion_Status';
+import Button from '../../compnanat/Button';
+export default function Residential({navigation}) {
   const [selecLookTo, setLookTo] = useState(0);
+  const [isEnabled, setIsEnabled] = useState(false);
+  const [onSroll, setOnScroll] = useState(0);
+  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+  
   const rendorItem = ({item, index}) => {
     return (
       <TouchableOpacity
-      key={index}
+        key={index}
         style={[
           styles.itemContainer,
           {
@@ -31,10 +52,23 @@ export default function Residential() {
       </TouchableOpacity>
     );
   };
-  const [multiSliderValue, setMultiSliderValue] = React.useState([3, 7]);
+  const PropertyImagVideo = ({title}) => {
+    return (
+      <View style={styles.PropertyImagVideoCOntainer}>
+        <Text style={[styles.txt1, {fontSize: rf(1.7)}]}>{title}</Text>
+        <Switch
+          trackColor={{false: COLORS.Greyscale, true: COLORS.primary}}
+          thumbColor={isEnabled ? COLORS.white : COLORS.primary}
+          ios_backgroundColor="#3e3e3e"
+          onValueChange={toggleSwitch}
+          value={isEnabled}
+        />
+      </View>
+    );
+  };
   return (
     <View style={styles.container}>
-      <Text style={styles.txt1}>Looking to</Text>
+       <Text style={styles.txt1}>Looking to</Text> 
       <View>
         <FlatList
           data={LookToData}
@@ -42,30 +76,41 @@ export default function Residential() {
           keyExtractor={(item, index) => index.toString()}
           numColumns={3}
           contentContainerStyle={{
-            paddingVertical: hp('1%'),
+            paddingBottom: hp('8%'),
+          }}
+          ListFooterComponent={() => {
+            return (
+              <>
+                <FilterSearchBar />
+                <Budget />
+                <NoOfBedroomList />
+                <TypeOfProperty />
+                <BuildYear />
+                <Locality />
+                <Amenities />
+                <PropertyImagVideo title={'Properties Photo'} />
+                <PropertyImagVideo title={'Properties Video'} />
+                <Furnished_Area />
+                <Area />
+                <Possesion_Status />
+                <Button
+                  title={'Search'}
+                  style={{marginTop: hp('8%')}}
+                  onPress={() => {
+                    navigation.navigate(SCREENS.FilterSearchList);
+                  }}
+                />
+              </>
+            );
+          }}
+          onScroll={data => {
+            setOnScroll(data.nativeEvent.contentOffset.y);
+          }}
+          onScrollBeginDrag={()=>{
+            
           }}
         />
       </View>
-      <FilterSearchBar />
-      <Text style={styles.txt1}>Budget</Text>
-      <MultiSlider
-          values={[multiSliderValue[0], multiSliderValue[1]]}
-          // sliderLength={'100%'}
-          onValuesChange={()=>{
-          }}
-         selectedStyle={{
-          backgroundColor:COLORS.golden
-         }}
-         markerStyle={{
-          backgroundColor:COLORS.golden
-         }}
-          min={0}
-          max={10}
-          step={1}
-          allowOverlap
-          snapped
-          // customLabel={CustomLabel}
-        />
     </View>
   );
 }
@@ -88,15 +133,26 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   txt1: {
-    fontSize: rf(2),
+    fontSize: rf(1.6),
     color: COLORS.black,
-    fontFamily: FONTFAMILY.SemiBold,
+    fontFamily: FONTFAMILY.Bold,
     marginTop: hp('2%'),
   },
   txt2: {
     fontSize: rf(1.5),
     color: COLORS.black,
     fontFamily: FONTFAMILY.Medium,
+  },
+  txt3: {
+    fontSize: rf(1.5),
+    color: COLORS.black,
+    fontFamily: FONTFAMILY.Medium,
+  },
+  PropertyImagVideoCOntainer: {
+    marginTop: hp('2%'),
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
 });
 

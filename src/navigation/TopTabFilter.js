@@ -54,6 +54,7 @@ export default function FilterTabs() {
 
           return (
             <TouchableOpacity
+            key={index.toString()}
               accessibilityRole='button'
               accessibilityState={isFocused ? {selected: true} : {}}
               accessibilityLabel={options.tabBarAccessibilityLabel}
@@ -68,8 +69,8 @@ export default function FilterTabs() {
               <Animated.Text
                 style={{
                   color: COLORS.black,
-                  fontSize: rf(2),
-                  fontFamily: FONTFAMILY.SemiBold,
+                  fontSize: rf(1.6),
+                  fontFamily: FONTFAMILY.Bold, 
                 }}>
                 {label}
               </Animated.Text>

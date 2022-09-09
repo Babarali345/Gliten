@@ -9,6 +9,7 @@ import BottomNavigation from './BottomNavigation';
 import MyDrawer from './Drawer';
 import FilterProperty from '../screens/FilterProperty/Residential';
 import FilterTabs from './TopTabFilter';
+import FilterSearchList from '../screens/FilterProperty/FilterSearchList';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +30,7 @@ function MainNavigation() {
         />
           <Stack.Screen name={SCREENS.SignUp} component={SignUp} />
           <Stack.Screen name={SCREENS.FilterTabs} component={FilterTabs} />
+          <Stack.Screen name={SCREENS.FilterSearchList} component={FilterSearchList} />
       </Stack.Navigator>
     </NavigationContainer>
   );

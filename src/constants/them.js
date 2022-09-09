@@ -66,7 +66,8 @@ export const SCREENS = {
   MyDrawer:'MyDrawer',
   Residential:'Residential',
   FilterTabs:'FilterTabs',
-  Commercial:'Commercial'
+  Commercial:'Commercial',
+  FilterSearchList:'FilterSearchList'
 };
 
 export const STYLES = StyleSheet.create({

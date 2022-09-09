@@ -3,10 +3,11 @@ import React from 'react';
 import {COLORS} from '../constants/them';
 import { heightPercentageToDP as hp, responsiveFontSize as rf, widthPercentageToDP as wp} from '../common/responsiveFunction';
 
-export default function Button({title,style}) {
+export default function Button({title,style,onPress}) {
   return (
     <TouchableOpacity style={[styles.container,style]}
     activeOpacity={0.7}
+    onPress={onPress}
     >
       <Text style={styles.txt}>{title}</Text>
     </TouchableOpacity>

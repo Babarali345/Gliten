@@ -1,51 +1,13 @@
-import {FlatList, Image, Pressable, StyleSheet, Text, View} from 'react-native';
-import React, {useState} from 'react';
-import Header from '../../compnanat/Header';
-import {COLORS, FONTFAMILY, STYLES} from '../../constants/them';
+import { StyleSheet, Text, View ,FlatList,Image} from 'react-native'
+import React from 'react'
+import { COLORS, FONTFAMILY, STYLES } from '../../constants/them'
 import {
   heightPercentageToDP as hp,
   responsiveFontSize as rf,
   widthPercentageToDP as wp,
 } from '../../common/responsiveFunction';
-import {ListEmptySvg, MenueIcon} from '../../compnanat/svg';
-import ActivityListEmptyComponanat from '../../compnanat/ActivityListEmptyComponanat';
 import ShortListEmptyComponanat from '../../compnanat/ShortListedEpmtyComponanat';
-export default function Activity({navigation}) {
-  const [tabPressed, setTabPresed] = useState();
-  const [data, setData] = useState([]);
-
-  const rendorTab = ({item, index}) => {
-    return (
-      <Pressable
-        style={({pressed}) => [
-          {
-            opacity: pressed ? 0.7 : 1,
-          },
-          styles.itemContainer,
-          {
-            backgroundColor:
-              tabPressed === index ? COLORS.skyBlueLight : COLORS.skyBlueDark,
-            borderColor:
-              tabPressed === index ? COLORS.lightBlue : COLORS.Greyscale,
-          },
-        ]}
-        onPress={() => {
-          setTabPresed(index);
-          if (index === 1) {
-            setData(Data);
-          }
-          if (index === 0) {
-            setData([]);
-          }
-          if (index === 2) {
-            setData([]);
-          }
-        }}>
-        <Text style={styles.itemTxt}>{item.name}</Text>
-      </Pressable>
-    );
-  };
-
+export default function FilterSearchList() {
   const rendorActivity = ({item}) => {
     return (
       <View style={styles.Container2}>
@@ -75,79 +37,49 @@ export default function Activity({navigation}) {
   };
   return (
     <View style={styles.container}>
-      <View style={styles.menueContainer}>
-        <MenueIcon onPress={()=>{
-         navigation.openDrawer()
-        }}/>
-        <Text style={styles.txt}>Shortlists</Text>
-        <Text style={[styles.txtsquire, {color: COLORS.Greyscale}]}>
-        Find all your shortlists at one place...
-              </Text>
-      </View>
-      <View>
-        <FlatList
-          data={TabData}
-          renderItem={rendorTab}
-          horizontal
+      <FlatList
+          data={Data}
+          renderItem={rendorActivity}
           contentContainerStyle={{
-            paddingVertical: hp('1.5%'),
-            marginTop: hp('3%'),
             paddingHorizontal: wp('2%'),
+            paddingBottom: hp('5%'),
+          }}
+          ListEmptyComponent={ShortListEmptyComponanat}
+          ItemSeparatorComponent={() => {
+            return (
+              <View
+                style={{
+                  height: hp(0.1),
+                  backgroundColor: COLORS.Greyscale,
+                  marginTop: hp('1.5%'),
+                }}
+              />
+            );
           }}
         />
-      </View>
-      <View style={{flex: 1}}>
-          <FlatList
-            data={data}
-            renderItem={rendorActivity}
-            contentContainerStyle={{
-              paddingHorizontal: wp('2%'),
-              paddingBottom: hp('5%'),
-            }}
-            ListEmptyComponent={ShortListEmptyComponanat}
-            ItemSeparatorComponent={() => {
-              return (
-                <View
-                  style={{
-                    height: hp(0.1),
-                    backgroundColor: COLORS.Greyscale,
-                    marginTop: hp('1.5%'),
-                  }}
-                />
-              );
-            }}
-          />
-      </View>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingHorizontal: wp('2%'),
-    backgroundColor: COLORS.white,
+  container:{
+    flex:1,
+    backgroundColor:COLORS.white
   },
-  itemContainer: {
-    backgroundColor: COLORS.skyBlueLight,
-    padding: wp('1.3%'),
-    borderWidth: 0.5,
-    marginRight: wp('2%'),
-    borderRadius: wp('5%'),
-  },
-  itemTxt: {
-    color: COLORS.lightBlue,
-    fontFamily: FONTFAMILY.Medium,
-    fontSize: rf(1.6),
+  Container2: {
+    flexDirection: 'row',
+    marginTop: hp('2%'),
   },
   images: {
     height: hp('12%'),
     width: wp('30%'),
     borderRadius: wp('3%'),
   },
-  Container2: {
-    flexDirection: 'row',
-    marginTop: hp('2%'),
+  itemDetailContainer: {
+    flex: 1,
+    marginTop: hp('1%'),
+    marginStart: wp('2%'),
+    paddingHorizontal: wp('2%'),
   },
   txtApartment: {
     color: COLORS.golden,
@@ -168,47 +100,15 @@ const styles = StyleSheet.create({
     marginTop: hp('0.5%'),
     fontFamily: FONTFAMILY.SemiBold,
   },
-  itemDetailContainer: {
-    flex: 1,
-    marginTop: hp('1%'),
-    marginStart: wp('2%'),
-    paddingHorizontal: wp('2%'),
-  },
   squreDetail: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     marginTop: hp('1%'),
   },
-  txt: {
+})
 
-    color: COLORS.black,
-    fontSize: rf(1.8),
-    marginTop: hp('0.5%'),
-    fontFamily: FONTFAMILY.SemiBold,
-    marginRight:wp('2%')
-  },
-  menueContainer:{
-    marginTop:hp('2%'),
-    paddingHorizontal: wp('2%'),
 
-  }
-});
-
-const TabData = [
-  {
-    id: 1,
-    name: 'Properties (0)',
-  },
-  {
-    id: 2,
-    name: 'Projects (10)',
-  },
-  {
-    id: 3,
-    name: 'Localities(0)',
-  },
-];
 const Data = [
   {
     id: 1,

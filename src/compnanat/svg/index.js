@@ -306,4 +306,12 @@ export function FilterSearchIcon() {
     </Svg>
   );
 }
+export function PlusIconSvg() {
+  return (
+    <Svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <Path d="M5.08337 1V9.16667" stroke="#838383" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
+    <Path d="M1 5.08337H9.16667" stroke="#838383" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
+    </Svg>
+  );
+}
 
