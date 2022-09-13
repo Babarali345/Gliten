@@ -41,6 +41,7 @@ export default function NoOfBedroomList() {
           horizontal
           contentContainerStyle={{
             // paddingVertical: hp('1%'),
+            paddingHorizontal: wp('3%')
           }}
         />
       </View>
@@ -74,6 +75,7 @@ const styles = StyleSheet.create({
     fontSize: rf(1.6),
         color: COLORS.black,
         fontFamily: FONTFAMILY.Bold,
+        paddingHorizontal: wp('3%')
   }
 });
 

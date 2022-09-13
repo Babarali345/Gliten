@@ -1,6 +1,6 @@
 import {Pressable} from 'react-native';
 import React from 'react';
-import {Svg, Path, Rect, Circle,Image,Defs,Pattern,Use} from 'react-native-svg';
+import {Svg, Path, Rect, Circle,Image,Defs,Pattern,Use, G,ClipPath} from 'react-native-svg';
 import {COLORS} from '../../constants/them';
 
 export function ActivitySvg({focused}) {
@@ -336,6 +336,41 @@ export function MarkerSvg() {
       fill="#fff"
     />
   </Svg>
+  );
+}
+export function UploadSvg() {
+  return (
+    <Svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <Path d="M24.5 17.5V22.1667C24.5 22.7855 24.2542 23.379 23.8166 23.8166C23.379 24.2542 22.7855 24.5 22.1667 24.5H5.83333C5.21449 24.5 4.621 24.2542 4.18342 23.8166C3.74583 23.379 3.5 22.7855 3.5 22.1667V17.5" stroke="#094C91" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <Path d="M19.8332 9.33333L13.9998 3.5L8.1665 9.33333" stroke="#094C91" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <Path d="M14 3.5V17.5" stroke="#094C91" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </Svg>
+  );
+}
+export function GoogleSvg() {
+  return (
+    <Svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <Path d="M23.251 12.2332C23.251 11.3699 23.1796 10.7399 23.0248 10.0865H12.9653V13.9832H18.87C18.751 14.9515 18.1082 16.4099 16.6796 17.3898L16.6596 17.5203L19.8402 19.935L20.0606 19.9565C22.0843 18.1249 23.251 15.4298 23.251 12.2332Z" fill="#4285F4"/>
+    <Path d="M12.9647 22.5C15.8575 22.5 18.286 21.5666 20.0599 19.9566L16.6789 17.3898C15.7742 18.0082 14.5599 18.4399 12.9647 18.4399C10.1314 18.4399 7.72663 16.6082 6.86941 14.0765L6.74376 14.087L3.4365 16.5954L3.39325 16.7132C5.15513 20.1432 8.77417 22.5 12.9647 22.5Z" fill="#34A853"/>
+    <Path d="M6.87003 14.0766C6.64385 13.4233 6.51295 12.7232 6.51295 11.9999C6.51295 11.2765 6.64385 10.5766 6.85813 9.92325L6.85214 9.78411L3.50343 7.23547L3.39387 7.28655C2.66771 8.7099 2.25104 10.3083 2.25104 11.9999C2.25104 13.6916 2.66771 15.2899 3.39387 16.7132L6.87003 14.0766Z" fill="#FBBC05"/>
+    <Path d="M12.9647 5.55997C14.9766 5.55997 16.3337 6.41163 17.1076 7.12335L20.1314 4.23C18.2743 2.53834 15.8575 1.5 12.9647 1.5C8.7742 1.5 5.15514 3.85665 3.39325 7.28662L6.85753 9.92332C7.72665 7.39166 10.1314 5.55997 12.9647 5.55997Z" fill="#EB4335"/>
+    </Svg>
+    
+  );
+}
+export function FacebookSvg() {
+  return (
+    <Svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <G clip-path="url(#clip0_1_294)">
+    <Path fill-rule="evenodd" clip-rule="evenodd" d="M0.25 12.067C0.25 18.033 4.583 22.994 10.25 24V15.333H7.25V12H10.25V9.333C10.25 6.333 12.183 4.667 14.917 4.667C15.783 4.667 16.717 4.8 17.583 4.933V8H16.05C14.583 8 14.25 8.733 14.25 9.667V12H17.45L16.917 15.333H14.25V24C19.917 22.994 24.25 18.034 24.25 12.067C24.25 5.43 18.85 0 12.25 0C5.65 0 0.25 5.43 0.25 12.067Z" fill="#2972FF"/>
+    </G>
+    <Defs>
+    <ClipPath id="clip0_1_294">
+    <Rect width="24" height="24" fill="white" transform="translate(0.25)"/>
+    </ClipPath>
+    </Defs>
+    </Svg>
+    
   );
 }
 

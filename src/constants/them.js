@@ -29,7 +29,8 @@ export const COLORS = {
   tabBarLabel:'#64748B',
   skyBlueLight:'#E0EEFF',
   skyBlueDark:'#E5EBF3',
-  lightBlue:'#01478F'
+  lightBlue:'#01478F',
+  socialBg:'#F8FAFC'
 };
 
 const appTheme = {COLORS};
@@ -58,6 +59,7 @@ export const IMAGES = {
 /* * Screens * */
 export const SCREENS = {
   SignUp:'SignUp',
+  SignIn:'SignIn',
   BottomNavigation:'BottomNavigation',
   Profile:'Profile',
   ShortListed:'ShortListed',
@@ -70,6 +72,9 @@ export const SCREENS = {
   FilterSearchList:'FilterSearchList',
   AddProperty1:'AddProperty1',
   AddProperty2:'AddProperty2',
+  AddPropertyScreen3:'AddPropertyScreen3',
+  AddPropertyScreen4:'AddPropertyScreen4',
+  AddPropertyScreen5:'AddPropertyScreen5',
 };
 
 export const STYLES = StyleSheet.create({

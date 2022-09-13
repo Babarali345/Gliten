@@ -9,7 +9,7 @@ import {
     responsiveFontSize as rf,
     widthPercentageToDP as wp,
   } from '../common/responsiveFunction';
-export default function DropDownModal({Data}) {
+export default function DropDownModal({Data,placeHolder,dropDownStyle}) {
     const ref = useRef();
     const [showDepartmentModal, setShowDepartmentModal] = useState(false);
   const [isDptselect, setIsSelectDpt] = useState(false);
@@ -25,9 +25,10 @@ export default function DropDownModal({Data}) {
           style={{}}
           dropdownStyle={[
             STYLES.shadow,
+            dropDownStyle,
             {
               width: wp('50%'),
-              height: hp('34%'),
+              // height: hp('34%'),
               marginLeft: wp('2%'),
               borderWidth: 0,
               borderRadius: wp('2%'),
@@ -52,11 +53,10 @@ export default function DropDownModal({Data}) {
               ref.current.show();
               setIsSelectDpt(true);
             }}>
-
             <View style={styles.departmentContainer}>
               <Text style={styles.txt2}>
                 {selectDepartment === ''
-                  ? 'Select Year of Building'
+                  ? placeHolder
                   : selectDepartment}
               </Text>
               <AntDesign
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: wp('2%'),
         paddingHorizontal: wp('2%'),
-        height:hp('8%'),
+        // height:hp('8%'),
         marginTop: hp('2%'),
         borderColor:COLORS.Greyscale,
         backgroundColor:COLORS.transparent
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
       },
       departmentContainer: {
         flex: 1,
-        paddingVertical: hp('2.5%'),
+        paddingVertical: hp('1.8%'),
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',

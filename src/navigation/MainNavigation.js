@@ -12,6 +12,10 @@ import FilterTabs from './TopTabFilter';
 import FilterSearchList from '../screens/FilterProperty/FilterSearchList';
 import AddProperty1 from '../screens/AddProperty/AddPropertyScreen1';
 import AddPropertyScreen2 from '../screens/AddProperty/AddPropertyScreen2';
+import AddPropertyScreen3 from '../screens/AddProperty/AddPropertyScreen3';
+import AddPropertyScreen4 from '../screens/AddProperty/AddPropertyScreen4';
+import AddPropertyScreen5 from '../screens/AddProperty/AddPropertyScreen5';
+import SignIn from '../screens/Auth/SighnIn';
 
 const Stack = createNativeStackNavigator();
 
@@ -47,6 +51,7 @@ function MainNavigation() {
     
         />
           <Stack.Screen name={SCREENS.SignUp} component={SignUp} />
+          <Stack.Screen name={SCREENS.SignIn} component={SignIn} />
           <Stack.Screen name={SCREENS.FilterTabs} component={FilterTabs} />
           <Stack.Screen name={SCREENS.FilterSearchList} component={FilterSearchList}
          options={{
@@ -55,6 +60,9 @@ function MainNavigation() {
           />
           <Stack.Screen name={SCREENS.AddProperty1} component={AddProperty1} />
           <Stack.Screen name={SCREENS.AddProperty2} component={AddPropertyScreen2} />
+          <Stack.Screen name={SCREENS.AddPropertyScreen3} component={AddPropertyScreen3} />
+          <Stack.Screen name={SCREENS.AddPropertyScreen4} component={AddPropertyScreen4} />
+          <Stack.Screen name={SCREENS.AddPropertyScreen5} component={AddPropertyScreen5} />
       </Stack.Navigator>
     </NavigationContainer>
   );

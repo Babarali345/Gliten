@@ -19,11 +19,7 @@ import {
 } from '../../common/responsiveFunction';
 import EditText from '../../compnanat/EditText';
 import EditButton from '../../compnanat/Button';
-
 import {EditProfileIcon, ProfilTickIcon} from '../../compnanat/svg';
-import ImageUploadModal from '../../compnanat/ImageUploadModal';
-import Entypo from 'react-native-vector-icons/Entypo';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Modal from '../../compnanat/CustomModal';
 export default function Profile() {
   const [picture, setUpdatedPicture] = useState();

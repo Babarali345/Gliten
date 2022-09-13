@@ -1,7 +1,13 @@
-import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+} from 'react-native';
+import React, {useState} from 'react';
 
-import {COLORS, IMAGES} from '../../constants/them';
+import {COLORS} from '../../constants/them';
 import {
   heightPercentageToDP as hp,
   responsiveFontSize as rf,
@@ -9,106 +15,90 @@ import {
 } from '../../common/responsiveFunction';
 import EditText from '../../compnanat/EditText';
 import Button from '../../compnanat/Button';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
+import Seperator from '../../compnanat/Seperator';
+import SocialButtons from '../../compnanat/SocialButtons';
 
 export default function SignUp() {
+  const [toggleCheckBox, setToggleCheckBox] = useState(false);
   return (
-    <ScrollView style={styles.container}
-    contentContainerStyle={{paddingBottom:hp('5%')}}
-    showsVerticalScrollIndicator={false}
-    >
-      <Text style={styles.txt}>Get Started As Sign Board!</Text>
-      <Text style={styles.txt2}>Create an account to continue.</Text>
-      <EditText style={{marginTop: hp('2%')}} placeholder={'Username'} />
-      <EditText style={{marginTop: hp('2%')}} placeholder={'Email'} />
-      <EditText style={{marginTop: hp('2%')}} placeholder={'Contact No'} />
-      <EditText style={{marginTop: hp('2%')}} placeholder={'Address'} />
-      <EditText style={{marginTop: hp('2%')}} placeholder={'Location'} />
-      <View style={styles.checkBoxContainer}>
-        <View style={styles.checkBox} />
-        <Text style={styles.checktxt1}>
-          By creating an account, you agree to our{' '}
-          <Text style={styles.chexboxtxt2}>Terms and Condition</Text>
+    <SafeAreaView style={styles.container}>
+      <Text
+        style={[
+          styles.txt,
+          {fontWeight: '700', fontSize: rf(3), paddingBottom: 10},
+        ]}>
+        Get Started
+      </Text>
+
+      <Text style={[styles.txt, {fontSize: rf(2), paddingBottom: 20}]}>
+        Create an account to continue.
+      </Text>
+
+      <EditText placeholder={'Username'} />
+      <EditText placeholder={'Email'} />
+      <EditText placeholder={'Password'} secureTextEntry={true} />
+
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginTop: hp(1),
+          marginBottom: hp(2),
+        }}>
+        <Icon
+          name={
+            toggleCheckBox
+              ? 'checkbox-marked-circle'
+              : 'checkbox-blank-circle-outline'
+          }
+          size={23}
+          color="#7AA8FF"
+          onPress={() => {
+            setToggleCheckBox(!toggleCheckBox);
+          }}
+        />
+        <Text style={{lineHeight: rf(2.5), paddingHorizontal: hp(0.5)}}>
+          <Text style={{fontSize: rf(1.7)}}>
+            By creating an account, you agree to our
+          </Text>{' '}
+          <Text
+            style={{color: '#2972FF', fontWeight: '700', fontSize: rf(1.7)}}>
+            Terms and Condition
+          </Text>{' '}
         </Text>
       </View>
 
-      <View style={styles.buttonContainer}>
-        <Button title={'Sign Up'}/>
+      <View style={{marginBottom: hp(2)}}>
+        <Button title="Sign up" />
       </View>
-      <Text style={styles.or}>OR</Text>
-      <View style={styles.imageContainer}>
-        <Image source={IMAGES.googleLogo} style={styles.g_logo} resizeMode={'contain'} />
-        <Image source={IMAGES.facebook_logo} style={styles.g_logo} resizeMode={'contain'}/>
+      <Seperator />
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}>
+        <SocialButtons google />
+        <SocialButtons facebook />
       </View>
-      <Text style={styles.alreadyLogintxt}>
-      Already have an account?{' '}
-          <Text style={styles.chexboxtxt2}>Log In</Text>
-        </Text>
-    </ScrollView>
+      <Text style={{alignSelf: 'center', paddingVertical: hp(3)}}>
+        <Text>Already have an account? </Text>
+        <Text style={{color: '#2972FF', fontWeight: '700'}}>Log In</Text>
+      </Text>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    paddingHorizontal: wp('3%'),
-    backgroundColor:COLORS.white
+    backgroundColor:COLORS.white,
+    paddingTop: hp(2),
+    paddingHorizontal:wp('3%')
   },
   txt: {
     color: COLORS.black,
-    fontSize: rf(2.5),
-    marginTop: hp('1%'),
-  },
-  txt2: {
-    color: COLORS.brownGrey,
-    fontSize: rf(1.5),
-  },
-  checkBoxContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: hp('1%'),
-  },
-  checkBox: {
-    height: wp('5%'),
-    width: wp('5%'),
-    borderColor: COLORS.primary,
-    borderWidth: 1,
-    marginTop: hp('1%'),
-    borderRadius: wp('1%'),
-  },
-  checktxt1: {
-    color: COLORS.placeHolderColor,
-    fontSize: rf(1.5),
-    width: wp('90%'),
-    marginStart: wp('2%'),
-    alignSelf:'center',
-  },
-  alreadyLogintxt: {
-    color: COLORS.placeHolderColor,
-    fontSize: rf(1.5),
-    alignSelf:'center',
-  marginTop:hp('2%')
-  },
-  chexboxtxt2: {
-    color: COLORS.primary,
-    fontWeight: 'bold',
-  },
-  buttonContainer: {
-    marginTop: hp('5%'),
-  },
-  or: {
-    fontSize: rf(2),
-    alignSelf: 'center',
-    fontWeight: '500',
-    marginVertical: hp('2%'),
-  },
-  imageContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingHorizontal:wp('15%')
-  },
-  g_logo: {
-    height: wp('7%'),
-    width: wp('7%'),
   },
 });

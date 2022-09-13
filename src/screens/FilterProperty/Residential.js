@@ -3,8 +3,6 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
-  ScrollView,
   Switch,
   Animated
 } from 'react-native';
@@ -28,32 +26,10 @@ import Possesion_Status from '../../compnanat/Possesion_Status';
 import Button from '../../compnanat/Button';
 import LookingTo from '../../compnanat/LookingTo';
 export default function Residential({navigation}) {
-  const [selecLookTo, setLookTo] = useState(0);
   const [isEnabled, setIsEnabled] = useState(false);
-  const [onSroll, setOnScroll] = useState(0);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   
-  const rendorItem = ({item, index}) => {
-    return (
-      <TouchableOpacity
-        key={index}
-        style={[
-          styles.itemContainer,
-          {
-            borderColor:
-              selecLookTo === index ? COLORS.primary : COLORS.Greyscale,
-            backgroundColor:
-              selecLookTo === index ? COLORS.skyBlueLight : COLORS.skyBlueDark,
-          },
-        ]}
-        activeOpacity={0.8}
-        onPress={() => {
-          setLookTo(index);
-        }}>
-        <Text style={styles.txt2}>{item.name}</Text>
-      </TouchableOpacity>
-    );
-  };
+
   const PropertyImagVideo = ({title}) => {
     return (
       <View style={styles.PropertyImagVideoCOntainer}>

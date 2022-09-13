@@ -18,7 +18,7 @@ import {
   widthPercentageToDP as wp,
 } from '../common/responsiveFunction';
 import {COLORS, FONTFAMILY} from '../constants/them';
-export default function Modal({visible, options, setVisible,handleImageData}) {
+export default function CustomModal({visible, options, setVisible,handleImageData}) {
   const {height} = Dimensions.get('screen');
   const startPointY = options?.from === 'top' ? -height : height;
   const transY = useRef(new Animated.Value(0));
@@ -41,6 +41,7 @@ export default function Modal({visible, options, setVisible,handleImageData}) {
     });
   };
 
+  
   const profilePictureView = () => {
     ImagePicker.openPicker({
       width: 300,
@@ -59,9 +60,22 @@ export default function Modal({visible, options, setVisible,handleImageData}) {
   };
   useEffect(() => {
     if (visible) {
+      console.log('jjj',visible);
       startAnimation(0);
     }
   }, [visible]);
+ 
+  useEffect(() => {
+    if (!visible) {
+      setVisible(false);
+      Animated.timing(transY.current, {
+        toValue: startPointY,
+        duration: 0,
+        easing: Easing.inOut(Easing.ease),
+        useNativeDriver: true,
+      }).start();
+    }
+  }, []);
 
   const startAnimation = toValue => {
     Animated.timing(transY.current, {

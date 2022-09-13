@@ -17,6 +17,7 @@
     "@react-navigation/material-top-tabs": "^6.2.3",
     "@react-navigation/native": "^6.0.12",
     "@react-navigation/native-stack": "^6.8.0",
+    "radio-buttons-react-native": "^1.0.4",
     "react": "18.0.0",
     "react-native": "0.69.4",
     "react-native-gesture-handler": "^2.6.0",
@@ -32,6 +33,7 @@
     "react-native-splash-screen": "^3.3.0",
     "react-native-svg": "^13.1.0",
     "react-native-tab-view": "^3.1.1",
+    "react-native-toast-message": "^2.1.5",
     "react-native-vector-icons": "^9.2.0"
   },
   "devDependencies": {

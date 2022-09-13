@@ -97,7 +97,7 @@ export default function AddProperty({navigation}) {
           container: {
             zIndex: 10,
             overflow: 'visible',
-            height: hp('10%'),
+            // height: hp('8%'),
             flexGrow: 0,
             flexShrink: 0,
             backgroundColor: COLORS.transparent,
@@ -109,13 +109,12 @@ export default function AddProperty({navigation}) {
             backgroundColor: COLORS.white,
             alignItems: 'center',
             paddingHorizontal: wp('3%'),
-            height: hp('8%'),
+            // height: hp('8%'),
             borderColor: COLORS.black,
             borderWidth: 0.5,
             borderRadius: wp('2%'),
             overflow: 'hidden',
             marginTop: hp('2%'),
-            paddingVertical: hp('2%'),
           },
           textInput: [
             {
@@ -123,7 +122,7 @@ export default function AddProperty({navigation}) {
               fontFamily: FONTFAMILY.Medium,
               fontSize: rf(1.3),
               textTransform: 'capitalize',
-              height: hp('7%'),
+              // height: hp('7%'),
             },
           ],
           listView: {
@@ -166,7 +165,7 @@ export default function AddProperty({navigation}) {
               <GooglePlacesInput />
               <Button
                 title={'Set Location'}
-                style={{marginTop: hp('3%'), width: wp('40%')}}
+                style={{marginTop: hp('3%'), width: wp('40%'),paddingVertical: hp('1.5%'),}}
               />
               <View style={styles.mapcontainer}>
                 <MapView

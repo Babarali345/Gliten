@@ -28,7 +28,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
    borderBottomWidth:0.5,
    borderColor:COLORS.Greyscale,
-   marginTop:hp('1%')
+   marginTop:hp('1%'),
+ 
   },
   inputtxt: {
     flex: 1,

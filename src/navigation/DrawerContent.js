@@ -95,8 +95,12 @@ const Svg=(title)=>{
         <NavOption title="About Us" />
         <NavOption title="Pricy Policy" />
         <Text style={styles.txtAccount}>Account</Text>
-        <NavOption title="Login" />
-        <NavOption title="Sign Up" />
+        <NavOption title="Login" onPress={()=>{
+          navigation.navigate(SCREENS.SignIn)
+        }}/>
+        <NavOption title="Sign Up" onPress={()=>{
+          navigation.navigate(SCREENS.SignUp)
+        }}/>
       </View>
     </ScrollView>
   );

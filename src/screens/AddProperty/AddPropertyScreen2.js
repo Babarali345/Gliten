@@ -1,6 +1,6 @@
-import {StyleSheet, Text, View, TouchableOpacity, FlatList} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, FlatList, ScrollView} from 'react-native';
 import React, {useRef, useState} from 'react';
-import {COLORS, FONTFAMILY, STYLES} from '../../constants/them';
+import {COLORS, FONTFAMILY, SCREENS, STYLES} from '../../constants/them';
 import EditText from '../../compnanat/EditText';
 import {
   heightPercentageToDP as hp,
@@ -8,31 +8,31 @@ import {
   widthPercentageToDP as wp,
 } from '../../common/responsiveFunction';
 import DropDownModal from '../../compnanat/DropDownModal';
-export default function AddPropertyScreen2() {
-  const rendorItem = () => {
-    return (
-      <View>
-        <View
-          style={{
-            height: wp('3%'),
-            width: wp('3%'),
-            borderRadius: wp('3%'),
-            borderColor: COLORS.primary,
-            borderWidth: 1,
-          }}
-        />
-        <Text style={styles.txt1}>I'm</Text>
-      </View>
-    );
-  };
+import RadioButton from '../../compnanat/RadioButton';
+import Button from '../../compnanat/Button';
+export default function AddPropertyScreen2({navigation}) {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}
+    contentContainerStyle={{
+      paddingBottom:hp('5%')
+    }}
+    >
       <EditText placeholder={'Property Name'} />
       <EditText placeholder={'Land, floor, Building Area'} />
-      <DropDownModal Data={Data} />
+      <DropDownModal Data={Data} placeHolder='Select Year of Building'/>
       <Text style={styles.txt1}>I'm</Text>
-      <FlatList data={[1, 3, 3, 4]} renderItem={rendorItem} horizontal />
-    </View>
+      <RadioButton data={data} />
+      <Text style={styles.txt1}>Post Your Property For</Text>
+      <RadioButton data={data1} />
+      <Text style={styles.txt1}>Type Of Property</Text>
+      <RadioButton data={data2} />
+      <EditText placeholder={'Description'} style={{height:hp('17%')}}/>
+  <Button title={'Next'}
+  onPress={()=>{
+    navigation.navigate(SCREENS.AddPropertyScreen3)
+  }}
+  style={{marginTop: hp('2%'),}}/>
+    </ScrollView>
   );
 }
 
@@ -46,10 +46,41 @@ const styles = StyleSheet.create({
     marginStart: wp('2%'),
     color: COLORS.black,
     fontFamily: FONTFAMILY.SemiBold,
-    fontSize: rf(2),
+    fontSize: rf(1.6),
     marginTop: hp('2%'),
   },
+  itemContainer: {},
 });
+const data = [
+  {
+    label: 'Owner',
+  },
+  {
+    label: 'Agent',
+  },
+  {
+    label: 'Builder',
+  },
+  {
+    label: 'Company',
+  },
+];
+const data1 = [
+  {
+    label: 'Sell',
+  },
+  {
+    label: 'Rent',
+  },
+];
+const data2 = [
+  {
+    label: 'Apartment',
+  },
+  {
+    label: 'Villa',
+  },
+];
 
 const Data = [
   '2005',
