@@ -1,6 +1,6 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {COLORS} from '../constants/them';
+import {COLORS, FONTFAMILY} from '../constants/them';
 import { heightPercentageToDP as hp, responsiveFontSize as rf, widthPercentageToDP as wp} from '../common/responsiveFunction';
 
 export default function Button({title,style,onPress}) {
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   txt:{
     fontSize:rf(2),
     color:COLORS.white,
-    fontWeight:'bold',
+    fontFamily:FONTFAMILY.SemiBold,
     
   }
 });

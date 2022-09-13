@@ -6,14 +6,14 @@ import {
 } from '../common/responsiveFunction';
 import {COLORS} from '../constants/them';
 
-export default function EditText({style, placeholder}) {
+export default function EditText({style, placeholder,disable}) {
   const [isFocused, setIsFocused] = useState(false);
   return (
     <View
       style={[
         styles.container,
         style,
-        {borderColor: isFocused ? COLORS.primary : COLORS.Greyscale},
+        {borderColor: isFocused || disable? COLORS.primary : COLORS.Greyscale},
       ]}>
       <TextInput
         placeholder={placeholder}
@@ -27,6 +27,7 @@ export default function EditText({style, placeholder}) {
         onBlur={()=>{
           setIsFocused(false) 
         }}
+        editable={disable?false:true}
       />
     </View>
   );

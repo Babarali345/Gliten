@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   ScrollView,
   Switch,
+  Animated
 } from 'react-native';
 import React, {useState} from 'react';
 import {COLORS, FONTFAMILY, SCREENS} from '../../constants/them';
@@ -25,6 +26,7 @@ import Furnished_Area from '../../compnanat/Furnished_Area';
 import Area from '../../compnanat/Area';
 import Possesion_Status from '../../compnanat/Possesion_Status';
 import Button from '../../compnanat/Button';
+import LookingTo from '../../compnanat/LookingTo';
 export default function Residential({navigation}) {
   const [selecLookTo, setLookTo] = useState(0);
   const [isEnabled, setIsEnabled] = useState(false);
@@ -68,19 +70,17 @@ export default function Residential({navigation}) {
   };
   return (
     <View style={styles.container}>
-       <Text style={styles.txt1}>Looking to</Text> 
       <View>
         <FlatList
-          data={LookToData}
-          renderItem={rendorItem}
-          keyExtractor={(item, index) => index.toString()}
-          numColumns={3}
+          data={null}
+          renderItem={null}
           contentContainerStyle={{
             paddingBottom: hp('8%'),
           }}
           ListFooterComponent={() => {
             return (
               <>
+              <LookingTo/>
                 <FilterSearchBar />
                 <Budget />
                 <NoOfBedroomList />
@@ -102,12 +102,6 @@ export default function Residential({navigation}) {
                 />
               </>
             );
-          }}
-          onScroll={data => {
-            setOnScroll(data.nativeEvent.contentOffset.y);
-          }}
-          onScrollBeginDrag={()=>{
-            
           }}
         />
       </View>
@@ -156,37 +150,4 @@ const styles = StyleSheet.create({
   },
 });
 
-const LookToData = [
-  {
-    id: 1,
-    name: 'Buy',
-  },
-  {
-    id: 2,
-    name: 'RENT',
-  },
-  {
-    id: 3,
-    name: 'Student/PG',
-  },
-  {
-    id: 4,
-    name: 'Cultivable Land',
-  },
-  {
-    id: 5,
-    name: 'Office',
-  },
-  {
-    id: 6,
-    name: 'Architect',
-  },
-  {
-    id: 7,
-    name: 'Sign Board',
-  },
-  {
-    id: 8,
-    name: 'Builder',
-  },
-];
+

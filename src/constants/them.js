@@ -29,7 +29,7 @@ export const COLORS = {
   tabBarLabel:'#64748B',
   skyBlueLight:'#E0EEFF',
   skyBlueDark:'#E5EBF3',
-  lightBlue:'#094C91'
+  lightBlue:'#01478F'
 };
 
 const appTheme = {COLORS};
@@ -67,7 +67,9 @@ export const SCREENS = {
   Residential:'Residential',
   FilterTabs:'FilterTabs',
   Commercial:'Commercial',
-  FilterSearchList:'FilterSearchList'
+  FilterSearchList:'FilterSearchList',
+  AddProperty1:'AddProperty1',
+  AddProperty2:'AddProperty2',
 };
 
 export const STYLES = StyleSheet.create({

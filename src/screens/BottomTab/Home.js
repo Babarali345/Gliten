@@ -14,7 +14,7 @@ import {
   responsiveFontSize as rf,
   widthPercentageToDP as wp,
 } from '../../common/responsiveFunction';
-import {COLORS, FONTFAMILY, IMAGES} from '../../constants/them';
+import {COLORS, FONTFAMILY, IMAGES, SCREENS} from '../../constants/them';
 import SearchBar from '../../compnanat/SearchBar';
 import GetStartedList from '../../compnanat/GetStartedList';
 import Recently_Added_Property from '../../compnanat/Recently_Added_Property';
@@ -49,7 +49,7 @@ export default function Home({navigation}) {
               activeOpacity={0.8}
               style={styles.postProperty}
               onPress={() => {
-                
+                navigation.navigate(SCREENS.AddProperty1)
               }}>
 
             {/* <Text style={[styles.postPropert,{fontSize:rf(1),alignSelf:'flex-end'}]}>Find</Text> */}
