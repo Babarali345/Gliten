@@ -16,6 +16,8 @@ import AddPropertyScreen3 from '../screens/AddProperty/AddPropertyScreen3';
 import AddPropertyScreen4 from '../screens/AddProperty/AddPropertyScreen4';
 import AddPropertyScreen5 from '../screens/AddProperty/AddPropertyScreen5';
 import SignIn from '../screens/Auth/SighnIn';
+import SignUpMore from '../screens/Auth/SignUpMore';
+import MoreUserProfile from '../screens/Auth/MoreUserProfile';
 
 const Stack = createNativeStackNavigator();
 
@@ -52,6 +54,8 @@ function MainNavigation() {
         />
           <Stack.Screen name={SCREENS.SignUp} component={SignUp} />
           <Stack.Screen name={SCREENS.SignIn} component={SignIn} />
+          <Stack.Screen name={SCREENS.SignUpMore} component={SignUpMore} />
+          <Stack.Screen name={SCREENS.MoreUserProfile} component={MoreUserProfile} />
           <Stack.Screen name={SCREENS.FilterTabs} component={FilterTabs} />
           <Stack.Screen name={SCREENS.FilterSearchList} component={FilterSearchList}
          options={{

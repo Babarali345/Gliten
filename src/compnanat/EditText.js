@@ -19,6 +19,7 @@ export default function EditText({
   disable,
   icon,
   password,
+  keyBoardType
 }) {
   const [isFocused, setIsFocused] = useState(false);
   const [showPassword, setShowPassword] = useState(true);
@@ -36,6 +37,7 @@ export default function EditText({
         keyboardAppearance="light"
         showSoftInputOnFocus
         secureTextEntry={password ? showPassword : false}
+        keyboardType={keyBoardType}
         onFocus={() => {
           setIsFocused(true);
         }}

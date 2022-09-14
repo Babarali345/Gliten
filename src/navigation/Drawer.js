@@ -8,7 +8,10 @@ const Drawer = createDrawerNavigator();
 export default function MyDrawer() {
   return (
     <Drawer.Navigator
-    screenOptions={{headerShown:false}}
+    screenOptions={{headerShown:false,
+    drawerType:'front'
+    }}
+    
     drawerContent={props => <DrawerContent {...props} />}
     >
       <Drawer.Screen name={SCREENS.BottomNavigation} component={BottomNavigation}  />

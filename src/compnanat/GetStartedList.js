@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     color: COLORS.black,
     fontSize: rf(1.5),
     marginTop: hp('0.5%'),
-    fontFamily: FONTFAMILY.Regular,
+    fontFamily: FONTFAMILY.Medium,
     width: wp('30%'),
   },
   txtTitle: {
@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     paddingHorizontal: wp('2%'),
+    marginTop:hp('1.5%')
   },
 });
 

@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: wp('4%'),
     paddingHorizontal: wp('2%'),
-    paddingVertical: hp('0.5%'),
+    height:hp('7%')
   },
   inputtxt: {
     flex: 1,

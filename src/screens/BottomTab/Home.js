@@ -49,21 +49,35 @@ export default function Home({navigation}) {
               activeOpacity={0.8}
               style={styles.postProperty}
               onPress={() => {
-                navigation.navigate(SCREENS.AddProperty1)
+                navigation.navigate(SCREENS.AddProperty1);
               }}>
-
-            {/* <Text style={[styles.postPropert,{fontSize:rf(1),alignSelf:'flex-end'}]}>Find</Text> */}
-            <Text style={styles.postPropert}>Post Property</Text>
-              </TouchableOpacity>
+              <Text
+                style={[
+                  styles.postPropert,
+                  {
+                    fontSize: rf(1.1),
+                    alignSelf: 'flex-end',
+                    position: 'absolute',
+                    right:13,
+                    top:0,
+                    fontFamily:FONTFAMILY.Medium
+                  },
+                ]}>
+                Free
+              </Text>
+              <Text style={styles.postPropert}>Post Property</Text>
+            </TouchableOpacity>
           </View>
-          <SearchBar
-            style={{
-              marginHorizontal: wp('4%'),
-              position: 'absolute',
-              bottom: hp(-3),
-            }}
-          />
         </LinearGradient>
+        <SearchBar
+          style={{
+            marginHorizontal: wp('4%'),
+            position: 'absolute',
+            bottom: hp(-3),
+            left: 0,
+            right: 0,
+          }}
+        />
       </ImageBackground>
       <GetStartedList />
       <Recently_Added_Property />
@@ -94,13 +108,13 @@ const styles = StyleSheet.create({
     padding: wp('3%'),
   },
   menueIcon: {
-    fontSize: rf(2),
+    fontSize: rf(3),
   },
-    postPropert: {
-      fontSize: rf(1.5),
-      color: COLORS.white,
-      fontFamily: FONTFAMILY.SemiBold,
-    },
+  postPropert: {
+    fontSize: rf(1.5),
+    color: COLORS.white,
+    fontFamily: FONTFAMILY.SemiBold,
+  },
   txt: {
     color: COLORS.black,
     fontSize: rf(2.2),
@@ -118,13 +132,12 @@ const styles = StyleSheet.create({
   txtSeeAll: {
     color: COLORS.primary,
   },
-  postProperty:{
-    backgroundColor:COLORS.golden,
-    paddingHorizontal:wp('2.5%'),
-    paddingVertical:hp('0.5%'),
-    borderRadius:wp('4%'),
-    alignItems:'center',
-    justifyContent:'center'
-
-  }
+  postProperty: {
+    backgroundColor: COLORS.golden,
+    paddingHorizontal: wp('4%'),
+    paddingVertical: hp('0.8%'),
+    borderRadius: wp('4%'),
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });

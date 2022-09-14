@@ -11,12 +11,12 @@ export const COLORS = {
   red: '#F75555',
   yellow: '#F0CA21',
   white: '#ffffff',
-  charcoalGrey: '#252525',
+  charcoalGrey: '#757575',
   brownGrey: '#949494',
   blue: '#0037c1',
   brightYellow: '#fcf400',
   golden: '#F39C0F',
-  veryLightPink: '#d5d5d5',
+  veryLightPink: '#EFEFEF',
   halfpwhite: '#F8FAFC',
   transparent: 'transparent',
   naviWithOpacity: 'rgba(0,30,62,0.4)',
@@ -30,7 +30,9 @@ export const COLORS = {
   skyBlueLight:'#E0EEFF',
   skyBlueDark:'#E5EBF3',
   lightBlue:'#01478F',
-  socialBg:'#F8FAFC'
+  socialBg:'#F8FAFC',
+  tabFillColor:'#2972FF',
+
 };
 
 const appTheme = {COLORS};
@@ -60,6 +62,8 @@ export const IMAGES = {
 export const SCREENS = {
   SignUp:'SignUp',
   SignIn:'SignIn',
+  MoreUserProfile:'MoreUserProfile',
+  SignUpMore:'SignUpMore',
   BottomNavigation:'BottomNavigation',
   Profile:'Profile',
   ShortListed:'ShortListed',
@@ -93,5 +97,8 @@ export const STYLES = StyleSheet.create({
 
 /* * Api Path * */
 export const CONSTANTS = {
- 
+ User:'user',
+ Architect:'Architect',
+ Sign_Board:'Sign Board',
+ Builder:'Builder'
 };
