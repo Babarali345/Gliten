@@ -19,7 +19,7 @@ export default function EditText({
   disable,
   icon,
   password,
-  keyBoardType
+  keyboardType
 }) {
   const [isFocused, setIsFocused] = useState(false);
   const [showPassword, setShowPassword] = useState(true);
@@ -35,6 +35,7 @@ export default function EditText({
         placeholderTextColor={COLORS.Greyscale}
         style={[styles.txtInput]}
         keyboardAppearance="light"
+        keyboardType={keyboardType}
         showSoftInputOnFocus
         secureTextEntry={password ? showPassword : false}
         keyboardType={keyBoardType}
@@ -70,6 +71,8 @@ const styles = StyleSheet.create({
     marginTop: hp('2%'),
     flexDirection: 'row',
     alignItems: 'center',
+    height: hp('6%'),
+
   },
   txtInput: {
     flex: 1,

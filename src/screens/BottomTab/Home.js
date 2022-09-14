@@ -69,15 +69,16 @@ export default function Home({navigation}) {
             </TouchableOpacity>
           </View>
         </LinearGradient>
-        <SearchBar
-          style={{
-            marginHorizontal: wp('4%'),
-            position: 'absolute',
-            bottom: hp(-3),
-            left: 0,
-            right: 0,
-          }}
-        />
+          <SearchBar
+            style={{
+              marginHorizontal: wp('4%'),
+              position: 'absolute',
+              bottom: hp(-3),
+              left:0,
+              right:0
+
+            }}
+          />
       </ImageBackground>
       <GetStartedList />
       <Recently_Added_Property />
@@ -96,10 +97,13 @@ const styles = StyleSheet.create({
 
   image: {
     height: hp('30%'),
+    backgroundColor:'red'
+
   },
   linearGradient: {
     height: '100%',
     width: '100%',
+
   },
   menueContainer: {
     flexDirection: 'row',

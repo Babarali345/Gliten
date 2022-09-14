@@ -27,18 +27,18 @@ export default function Recently_Added_Property() {
           }}
           style={styles.images}
         />
-        <Text style={[styles.txt, {color: COLORS.golden}]}>Apartment</Text>
+        <Text style={[styles.txt, {color: COLORS.golden,fontFamily:FONTFAMILY.Medium, paddingLeft:5}]}>APARTMENT</Text>
         <Text style={styles.txt}>{item.name}</Text>
         <View style={styles.squirTxtContainer}>
           <Text style={[styles.txt, {}]}>
-            ₹31.1 L{' '}
-            <Text style={[styles.txt, {color: COLORS.Greyscale,}]}>
+            ₹31.1 L
+            <Text style={[styles.txt, {color: COLORS.Greyscale,fontSize:rf(1.2)}]}>
               {'\n'}₹4000/sq.ft.
             </Text>
           </Text>
 
           <Text style={styles.txt}>
-            1,265<Text style={{color: COLORS.Greyscale}}>sq.ft.</Text>
+            1,265<Text style={{color: COLORS.Greyscale,fontFamily:FONTFAMILY.Medium,fontSize:rf(1.2)}}> sq.ft.</Text>
           </Text>
 
         </View>
@@ -48,7 +48,8 @@ export default function Recently_Added_Property() {
   return (
     <View>
       <View style={styles.recentlyTxtContainer}>
-        <Text style={styles.recentylTxt}>Recently added Property</Text>
+        <Text style={styles.recentylTxt}>Recently added Property
+</Text>
         <Pressable
           onPress={() => {}}
           style={({pressed}) => [
@@ -57,7 +58,7 @@ export default function Recently_Added_Property() {
             },
             styles.button,
           ]}>
-          <Text style={styles.txtSeeAll}>See all</Text>
+            <Text style={styles.txtSeeAll}>See all</Text>
         </Pressable>
       </View>
       <FlatList
@@ -86,13 +87,12 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.29,
     shadowRadius: 4.65,
-
-    elevation: 7,
-    width: wp('55%'),
+    elevation:5,
+    width: wp('53%'),
   },
 
   images: {
-    height: hp('22%'),
+    height: hp('15%'),
     width: '100%',
     borderRadius: wp('3%'),
   },
@@ -100,20 +100,25 @@ const styles = StyleSheet.create({
     color: COLORS.black,
     fontSize: rf(1.4),
     marginTop: hp('0.5%'),
-    fontFamily: FONTFAMILY.Bold,
+    fontFamily: FONTFAMILY.SemiBold,
+    paddingLeft:5,
+    
     // width: wp('50%'),
   },
   txtSeeAll: {
     color: COLORS.primary,
     fontSize: rf(1.5),
     marginTop: hp('0.5%'),
+    marginRight: hp('1%'),
     fontFamily: FONTFAMILY.SemiBold,
     
   },
   recentylTxt: {
+    marginTop:hp('1'),
     color: COLORS.black,
-    fontSize: rf(2),
+    fontSize: rf(2.3),
     fontFamily: FONTFAMILY.Bold,
+    marginBottom:hp('0.5%')
   },
   recentlyTxtContainer: {
     alignItems: 'center',
@@ -126,7 +131,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingBottom:hp('1%')
+    paddingBottom:hp('1%'),
   },
 });
 

@@ -64,27 +64,31 @@ flexDirection:'row',
     color: COLORS.black,
     fontSize: rf(1.5),
     fontFamily: FONTFAMILY.SemiBold,
-    width:wp('40%'),
+    width:wp('35%'),
    
   },
   txtContainer:{
-    marginStart:wp('2%')
+    marginStart:wp('2%'),
+    
   },
   recentylTxt: {
     color: COLORS.black,
-    fontSize: rf(2),
+    fontSize: rf(2.3),
     fontFamily: FONTFAMILY.Bold,
+    
   },
   images: {
-    height: hp('13%'),
-    width: wp('35%'),
+    height: hp('7%'),
+    width: wp('28%'),
     borderRadius: wp('3%'),
   },
   txt2: {
     color: COLORS.Greyscale,
     fontSize: rf(1.3),
     fontFamily: FONTFAMILY.Medium,
-    marginTop: hp('4%'),
+    marginTop: hp('1%'),
+  
+    
   },
   
 });

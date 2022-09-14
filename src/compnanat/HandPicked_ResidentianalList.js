@@ -56,7 +56,8 @@ export default function HandPicked_ResidentianalList() {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: wp('2%'),
-    marginTop:hp('1%')
+    marginTop:hp('1%'),
+    
   },
   itemContainer: {
     flexDirection: 'row',
@@ -78,16 +79,16 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     padding:wp('2%'),
     width:wp('40%'),
-    borderRadius:wp('2%')
+    borderRadius:wp('3%'),
   },
   recentylTxt: {
     color: COLORS.black,
-    fontSize: rf(2),
+    fontSize: rf(2.3),
     fontFamily: FONTFAMILY.Bold,
   },
   images: {
-    height: hp('20%'),
-    width: wp('50%'),
+    height: hp('15%'),
+    width: wp('45%'),
     borderRadius: wp('3%'),
   },
   txt2: {

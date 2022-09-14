@@ -79,10 +79,10 @@ export default function Profile() {
         Solo, Indonesia
       </Text>
       <EditText placeholder={'William Corner'} />
-      <EditText placeholder={'(+91)-825378995-12'} />
+      <EditText placeholder={'(+91)-825378995-12'} keyboardType='numeric' />
       <EditText placeholder={'Mumbai,Malda,India'} />
       <EditText placeholder={'India'} />
-      <EditText placeholder={'ZipCode'} />
+      <EditText placeholder={'ZipCode'} keyboardType='numeric' />
 
       <EditButton title="Update now" style={{marginTop: hp('2%')}} />
 
