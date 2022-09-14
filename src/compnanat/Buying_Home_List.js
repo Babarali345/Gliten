@@ -37,9 +37,7 @@ export default function Buying_Home_List() {
     <View>
       <View style={styles.listContainer}>
         <Text style={styles.txtTitle}>Buying a home</Text>
-        <Text style={styles.txt2}>
-          Appartments, land, builder floors, villas and more
-        </Text>
+        <Text style={styles.txt2}>Appartments, land, builder floors, villas and more        </Text>
       </View>
       <FlatList
         data={Data}
@@ -65,14 +63,13 @@ const styles = StyleSheet.create({
   },
   txt: {
     color: COLORS.black,
-    fontSize: rf(1.2),
+    fontSize: rf(1.5),
     marginTop: hp('0.5%'),
     fontFamily: FONTFAMILY.Medium,
-    width: wp('40%'),
   },
   txtTitle: {
     color: COLORS.black,
-    fontSize: rf(2),
+    fontSize: rf(2.3),
     fontFamily: FONTFAMILY.Bold,
   },
   recentlyTxtContainer: {
@@ -81,16 +78,20 @@ const styles = StyleSheet.create({
     paddingHorizontal: wp('2%'),
     justifyContent: 'space-between',
     marginVertical: hp('2%'),
+    
+
   },
   txt2: {
     color: COLORS.Greyscale,
     fontSize: rf(1.3),
     fontFamily: FONTFAMILY.Medium,
-    marginVertical: hp('0.5%'),
+    marginVertical: hp('0.2%'),
+    paddingBottom:10
   },
   listContainer: {
     paddingHorizontal: wp('2%'),
-    marginTop:hp('1%')
+    marginTop:hp('1%'),
+
   },
 });
 

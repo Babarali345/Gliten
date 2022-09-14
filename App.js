@@ -1,7 +1,7 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet,SafeAreaView} from 'react-native';
 import Toast, {BaseToast} from 'react-native-toast-message';
-import {SafeAreaView} from 'react-native-safe-area-context';
+
 import {
   responsiveFontSize as rf,
   heightPercentageToDP as hp,

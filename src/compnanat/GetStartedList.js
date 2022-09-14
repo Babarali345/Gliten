@@ -61,11 +61,11 @@ export default function GetStartedList() {
 
 const styles = StyleSheet.create({
   itemContainer: {
-  
+
   },
   images: {
-    height: hp('15%'),
-    width: wp('35%'),
+    height: hp('10%'),
+    width: wp('29%'),
   },
   txt: {
     color: COLORS.black,
@@ -76,16 +76,17 @@ const styles = StyleSheet.create({
   },
   txtTitle: {
     color: COLORS.black,
-    fontSize: rf(2),
-    marginTop: hp('4%'),
+    fontSize: rf(2.3),
+    marginTop: hp('5%'),
     fontFamily: FONTFAMILY.Bold,
   },
  
   txt2: {
     color: COLORS.placeHolderColor,
-    fontSize: rf(1.3),
+    fontSize: rf(1.5),
     fontFamily: FONTFAMILY.Medium,
-    marginVertical: hp('1%'),
+    marginVertical: hp('0.45%'),
+    marginBottom:hp('1.5%')
   },
   listContainer: {
     paddingHorizontal: wp('2%'),
