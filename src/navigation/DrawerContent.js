@@ -5,6 +5,7 @@ import {
   StatusBar,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import React from 'react';
@@ -14,43 +15,42 @@ import {
   responsiveFontSize as rf,
 } from '../common/responsiveFunction';
 import {COLORS, FONTFAMILY, SCREENS} from '../constants/them';
-import Login, { AboutUs, DrawerContentHomeIcon, EditProfileIcon,  PrivacyPolicy,  ProfilTickIcon, SignUp } from '../compnanat/svg';
-
+import Login, {
+  AboutUs,
+  DrawerContentHomeIcon,
+  EditProfileIcon,
+  PrivacyPolicy,
+  ProfilTickIcon,
+  SignUp,
+} from '../compnanat/svg';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import SignUpDropDown from '../compnanat/SignUpDropDown';
 
 export default function DrawerContent({navigation}) {
-const Svg=(title)=>{
-  switch(title){
-    case 'Home':
-      return(
-        <DrawerContentHomeIcon/>
-      )
-    case 'About Us':
-      return(
-        <AboutUs/>
-      )
-    case 'Pricy Policy':
-      return(
-        <PrivacyPolicy/>
-      )
-    case 'Login':
-      return(
-        <Login/>
-      )
-    case 'Sign Up':
-      return(
-        <SignUp/>
-      )
-      
-  }
-  
-}
-  const NavOption = ({title,onPress}) => {
+  const Svg = title => {
+    switch (title) {
+      case 'Home':
+        return <DrawerContentHomeIcon />;
+      case 'About Us':
+        return <AboutUs />;
+      case 'Pricy Policy':
+        return <PrivacyPolicy />;
+      case 'Login':
+        return <Login />;
+      case 'Sign Up':
+        return <SignUp />;
+    }
+  };
+  const NavOption = ({title, onPress, iconPress}) => {
     return (
-  <Pressable style={({pressed})=>[ {
-    opacity: pressed ? 0.7 : 1,
-  },styles.naveOptionContainer]}
-  onPress={onPress}
-  >
+      <Pressable
+        style={({pressed}) => [
+          {
+            opacity: pressed ? 0.7 : 1,
+          },
+          styles.naveOptionContainer,
+        ]}
+        onPress={onPress}>
         {Svg(title)}
         <Text style={[styles.txtnavTitle]}>{title}</Text>
       </Pressable>
@@ -58,7 +58,6 @@ const Svg=(title)=>{
   };
   return (
     <ScrollView>
-      
       <View style={styles.imageContainer}>
         <Image
           resizeMode="contain"
@@ -74,10 +73,9 @@ const Svg=(title)=>{
             },
             styles.editIconContainer,
           ]}
-          onPress={()=>{
-            navigation.navigate(SCREENS.Profile)
-          }}
-          >
+          onPress={() => {
+            navigation.navigate(SCREENS.Profile);
+          }}>
           <EditProfileIcon />
         </Pressable>
       </View>
@@ -88,19 +86,22 @@ const Svg=(title)=>{
       </View>
       <Text style={styles.txt2}>Solo, Indonesia</Text>
       <View style={styles.ScreenContainer}>
-        <NavOption title="Home" onPress={()=>{
-          navigation.navigate(SCREENS.Home)
-        }}
+        <NavOption
+          title="Home"
+          onPress={() => {
+            navigation.navigate(SCREENS.Home);
+          }}
         />
         <NavOption title="About Us" />
         <NavOption title="Pricy Policy" />
         <Text style={styles.txtAccount}>Account</Text>
-        <NavOption title="Login" onPress={()=>{
-          navigation.navigate(SCREENS.SignIn)
-        }}/>
-        <NavOption title="Sign Up" onPress={()=>{
-          navigation.navigate(SCREENS.SignUp)
-        }}/>
+        <NavOption
+          title="Login"
+          onPress={() => {
+            navigation.navigate(SCREENS.SignIn);
+          }}
+        />
+       <SignUpDropDown/>
       </View>
     </ScrollView>
   );
@@ -151,13 +152,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: hp('2%'),
   },
-  ScreenContainer:{
-paddingLeft:wp('2%')
+  ScreenContainer: {
+    paddingLeft: wp('2%'),
   },
   txtAccount: {
     color: COLORS.placeHolderColor,
     fontSize: rf(1.7),
     fontFamily: FONTFAMILY.SemiBold,
     marginTop: hp('1%'),
+  },
+  icon: {
+    fontSize: rf(2.3),
+    color: COLORS.Greyscale,
   },
 });

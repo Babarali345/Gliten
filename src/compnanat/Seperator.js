@@ -13,7 +13,7 @@ export default function Seperator(props) {
       style={{
         flexDirection: 'row',
         alignItems: 'center',
-        marginVertical:hp('3%')
+        marginVertical:hp('4%')
       }}>
       <View
         style={{flex: 1, height: hp(0.2), backgroundColor: COLORS.veryLightPink}}

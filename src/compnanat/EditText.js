@@ -38,6 +38,7 @@ export default function EditText({
         keyboardType={keyboardType}
         showSoftInputOnFocus
         secureTextEntry={password ? showPassword : false}
+        keyboardType={keyBoardType}
         onFocus={() => {
           setIsFocused(true);
         }}
