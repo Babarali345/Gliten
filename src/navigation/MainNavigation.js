@@ -18,6 +18,7 @@ import AddPropertyScreen5 from '../screens/AddProperty/AddPropertyScreen5';
 import SignIn from '../screens/Auth/SighnIn';
 import SignUpMore from '../screens/Auth/SignUpMore';
 import MoreUserProfile from '../screens/Auth/MoreUserProfile';
+import PropertyDetailScreen from '../screens/PropertyDetail/PropertyOverview';
 
 const Stack = createNativeStackNavigator();
 
@@ -67,6 +68,8 @@ function MainNavigation() {
           <Stack.Screen name={SCREENS.AddPropertyScreen3} component={AddPropertyScreen3} />
           <Stack.Screen name={SCREENS.AddPropertyScreen4} component={AddPropertyScreen4} />
           <Stack.Screen name={SCREENS.AddPropertyScreen5} component={AddPropertyScreen5} />
+          <Stack.Screen name={SCREENS.PropertyDetailScreen} component={PropertyDetailScreen} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

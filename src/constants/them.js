@@ -32,6 +32,10 @@ export const COLORS = {
   lightBlue:'#01478F',
   socialBg:'#F8FAFC',
   tabFillColor:'#2972FF',
+  Config:'#8696B4',
+  seperator: '#e4e4e4',
+
+
 
 };
 
@@ -56,6 +60,7 @@ export const IMAGES = {
   facebook_logo:require('../assets/Images/facebook-logo.png'),
   BackImage:require('../assets/Images/BackImage.png'),
   award:require('../assets/Images/award.png'),
+  coverProperty:require('../assets/Images/property.png'),
 };
 
 /* * Screens * */
@@ -79,6 +84,7 @@ export const SCREENS = {
   AddPropertyScreen3:'AddPropertyScreen3',
   AddPropertyScreen4:'AddPropertyScreen4',
   AddPropertyScreen5:'AddPropertyScreen5',
+  PropertyDetailScreen:'PropertyDetailScreen'
 };
 
 export const STYLES = StyleSheet.create({

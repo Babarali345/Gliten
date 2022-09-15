@@ -26,7 +26,7 @@ export default function AddPropertyScreen2({navigation}) {
       <RadioButton data={data1} />
       <Text style={styles.txt1}>Type Of Property</Text>
       <RadioButton data={data2} />
-      <EditText placeholder={'Description'} style={{height:hp('17%')}}/>
+      <EditText placeholder={'Description'} description style={{}}/>
   <Button title={'Next'}
   onPress={()=>{
     navigation.navigate(SCREENS.AddPropertyScreen3)

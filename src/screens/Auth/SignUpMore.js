@@ -32,12 +32,12 @@ import {
         <EditText placeholder={'Username'} />
         <EditText placeholder={'Email'} />
         <EditText placeholder={'Password'} password icon />
-        <EditText placeholder={'Contact No'} keyBoardType="numeric" />
+        <EditText placeholder={'Contact No'} keyboardType={'numeric'} />
         <EditText placeholder={'Address'} />
         <EditText placeholder={'Location'} />
         <Button title="Sign up" style={{marginTop: hp('3%')}}
         onPress={()=>{
-            navigation.navigate(SCREENS.MoreUserProfile)
+            navigation.navigate(SCREENS.Home)
         }}
         />
         <Seperator />
