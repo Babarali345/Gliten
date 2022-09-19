@@ -68,18 +68,17 @@ const styles = StyleSheet.create({
     color: COLORS.black,
     fontSize: rf(1.5),
     fontFamily: FONTFAMILY.SemiBold,
-    // width: wp('20%'),
   },
   txtContainer: {
-    marginStart: wp('2%'),
     backgroundColor: COLORS.white,
     position: 'absolute',
+    padding:wp('2%'),
     right: -70,
     alignItems:'center',
     justifyContent:'center',
-    padding:wp('2%'),
     width:wp('40%'),
     borderRadius:wp('3%'),
+    height:hp('11%'),
   },
   recentylTxt: {
     color: COLORS.black,
@@ -95,11 +94,12 @@ const styles = StyleSheet.create({
     color: COLORS.Greyscale,
     fontSize: rf(1.3),
     fontFamily: FONTFAMILY.Medium,
-    marginVertical:hp('1%')
+    marginVertical:hp('0.5%'),
+    textAlign:'center'
   },
   txt3: {
     color: COLORS.black,
-    fontSize: rf(1.3),
+    fontSize: rf(1.5),
     fontFamily: FONTFAMILY.SemiBold,
   },
 });

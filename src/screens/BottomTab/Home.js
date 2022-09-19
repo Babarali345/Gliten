@@ -56,11 +56,9 @@ export default function Home({navigation}) {
                   styles.postPropert,
                   {
                     fontSize: rf(1.1),
-                    alignSelf: 'flex-end',
-                    position: 'absolute',
-                    right:13,
-                    top:0,
-                    fontFamily:FONTFAMILY.Medium
+                    textAlign:'right',
+                    fontFamily:FONTFAMILY.SemiBold,
+                    
                   },
                 ]}>
                 Free
@@ -118,6 +116,8 @@ const styles = StyleSheet.create({
     fontSize: rf(1.5),
     color: COLORS.white,
     fontFamily: FONTFAMILY.SemiBold,
+    lineHeight:12
+
   },
   txt: {
     color: COLORS.black,
@@ -139,9 +139,7 @@ const styles = StyleSheet.create({
   postProperty: {
     backgroundColor: COLORS.golden,
     paddingHorizontal: wp('4%'),
-    paddingVertical: hp('0.8%'),
-    borderRadius: wp('4%'),
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingVertical: hp('0.6%'),
+    borderRadius: wp('3%'),
   },
 });

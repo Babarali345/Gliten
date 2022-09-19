@@ -13,15 +13,17 @@ import {
   widthPercentageToDP as wp,
   responsiveFontSize as rf,
 } from '../common/responsiveFunction';
-import {COLORS, FONTFAMILY} from '../constants/them';
+import {COLORS, FONTFAMILY, SCREENS} from '../constants/them';
+import { useNavigation } from '@react-navigation/native';
 
 export default function GetStartedList() {
   const [isLoading,setIsloading]=useState(false)
+  const navigation=useNavigation()
   const renderItem = ({item, index}) => {
     return (
       <Pressable
       onPress={() => {
-        setIsloading(true)
+        navigation.navigate(SCREENS.PropertyDetailScreen)
       }}
       style={({pressed}) => [
         {
@@ -99,7 +101,7 @@ const Data = [
     id: 1,
     name: 'Buying a Home',
     image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRztwpHnsGkLDTDPZ8xnagR4_99FT6rAeesqg&usqp=CAU',
+    'https://i.ibb.co/PmXvjnL/Rectangle-188.png'
   },
   {
     id: 2,

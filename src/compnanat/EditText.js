@@ -19,7 +19,8 @@ export default function EditText({
   disable,
   icon,
   password,
-  keyboardType
+  keyboardType,
+  description
 }) {
   const [isFocused, setIsFocused] = useState(false);
   const [showPassword, setShowPassword] = useState(true);
@@ -28,7 +29,9 @@ export default function EditText({
       style={[
         styles.container,
         style,
-        {borderColor: isFocused || disable ? COLORS.primary : COLORS.Greyscale},
+        {borderColor: isFocused || disable ? COLORS.primary : COLORS.Greyscale,
+        height:description?hp('17%'):hp('6%')
+        },
       ]}>
       <TextInput
         placeholder={placeholder}
@@ -36,6 +39,7 @@ export default function EditText({
         style={[styles.txtInput]}
         keyboardAppearance="light"
         keyboardType={keyboardType}
+        multiline={description?true:false}
         showSoftInputOnFocus
         secureTextEntry={password ? showPassword : false}
         onFocus={() => {
@@ -75,6 +79,7 @@ const styles = StyleSheet.create({
   },
   txtInput: {
     flex: 1,
+    height:'100%',
     color: COLORS.black,
     // height: hp('8%'),
     // backgroundColor:'red'

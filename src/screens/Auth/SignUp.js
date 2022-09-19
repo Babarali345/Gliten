@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 
-import {COLORS, FONTFAMILY} from '../../constants/them';
+import {COLORS, FONTFAMILY, SCREENS} from '../../constants/them';
 import {
   heightPercentageToDP as hp,
   responsiveFontSize as rf,
@@ -20,7 +20,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Seperator from '../../compnanat/Seperator';
 import SocialButtons from '../../compnanat/SocialButtons';
 
-export default function SignUp() {
+export default function SignUp({navigation}) {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
   return (
     <SafeAreaView style={styles.container}>
@@ -32,14 +32,13 @@ export default function SignUp() {
       <EditText placeholder={'Email'} />
       <EditText placeholder={'Password'} password icon />
 
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          marginTop: hp(1),
-        }}></View>
+    
 
-      <Button title="Sign up" style={{marginTop: hp('2%'),}}/>
+      <Button title="Sign up" style={{marginTop: hp('3%'),}}
+      onPress={()=>{
+        navigation.navigate(SCREENS.Home)
+      }}
+      />
 
       <Seperator />
       <View
