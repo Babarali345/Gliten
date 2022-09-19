@@ -27,7 +27,7 @@ export default function GetStartedList() {
         {
           opacity: pressed ? 0.7 : 1,
         },
-        {marginStart:index===0?0:wp('2%')},
+        {marginStart:index===0?0:wp('1%')},
         
       ]}>
         <Image
