@@ -183,7 +183,9 @@ const ThirdRoute = () => {
   
   return(
   
-  <ScrollView style={{ flex: 1, backgroundColor:COLORS.white,paddingHorizontal:wp('5%'), }}>
+  <ScrollView style={{ flex: 1, backgroundColor:COLORS.white,paddingHorizontal:wp('5%'), }}
+  contentContainerStyle={{paddingBottom:hp('5%')}}
+  >
   <Text style={{fontFamily:FONTFAMILY.Medium,fontSize:rf(2.4),color:COLORS.black,paddingTop:hp(2),paddingBottom:hp(2)}}>Owner Details</Text>
   <Image style={{ width: 177, height: 177,}} resizeMode={"contain"} source={require("../../assets/dummy.png")}/>
   <Text style={{fontFamily:FONTFAMILY.Medium,fontSize:rf(2.3),color:COLORS.Config,paddingTop:hp(2),paddingBottom:hp(2)}}>Properties Listed:1</Text>
@@ -198,7 +200,7 @@ const ThirdRoute = () => {
 </View>
 <EditText placeholder='Name'/>
 <EditText placeholder='Email'/>
-<EditText placeholder='Interested in this property' style={{height:150, alignItems:'flex-start',paddingTop:10}}/>
+<EditText placeholder='Interested in this property' style={{ }}/>
 <View style={{flexDirection:'row',justifyContent:'space-between'}}>
 <EditText placeholder='IND (+91)' keyboardType='numeric' style={{width:('25%')}}/>
 <EditText placeholder='Phone no' keyboardType='numeric' style={{width:('73%')}}/>
@@ -237,9 +239,10 @@ export default function PropertyDetailScreen() {
   	<TabBar
      	 {...props}
       	activeColor={'#01478F'}
-        indicatorStyle={{ backgroundColor:'#01478F' ,width:wp(22),}}
+        indicatorStyle={{ backgroundColor:'#01478F' ,width:wp(22),
+      }}
       	inactiveColor={'black'}
-        style={{backgroundColor:COLORS.white,elevation:0,marginLeft:25,marginRight:25,}}
+        style={{backgroundColor:COLORS.white,elevation:0,paddingHorizontal:wp('2%')}}
         labelStyle={{fontFamily:FONTFAMILY.Bold,fontSize:rf(2.0), textAlign:'left', width:110,textTransform:'capitalize',}}
   	/>
   );

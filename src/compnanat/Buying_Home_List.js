@@ -5,22 +5,26 @@ import {
   widthPercentageToDP as wp,
   responsiveFontSize as rf,
 } from '../common/responsiveFunction';
-import {COLORS, FONTFAMILY} from '../constants/them';
+import {COLORS, FONTFAMILY, SCREENS} from '../constants/them';
+import { useNavigation } from '@react-navigation/native';
 export default function Buying_Home_List() {
   const [isLoading, setIsloading] = useState(false);
+  const navigation=useNavigation()
   const renderItem = ({item, index}) => {
     return (
       <View style={styles.itemContainer}>
         <Pressable
           onPress={() => {
-            setIsloading(true);
+            navigation.navigate(SCREENS.PropertyDetailScreen)
           }}
           style={({pressed}) => [
             {
               opacity: pressed ? 0.7 : 1,
             },
             {marginHorizontal: wp('2.5%'), alignSelf: 'center'},
-          ]}>
+          ]}
+          
+          >
           <Image
             source={{
               uri: item.image,

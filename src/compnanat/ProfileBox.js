@@ -7,10 +7,10 @@ import {
   } from '../common/responsiveFunction';
 import { COLORS, FONTFAMILY } from '../constants/them';
 import Button from './Button';
-export default function ProfileBox() {
+export default function ProfileBox({from}) {
   return (
     <View style={styles.container}>
-     <Text style={styles.txt1}>Architects</Text>
+     <Text style={styles.txt1}>{from}</Text>
      <View style={styles.detailContainer}>
      <Text style={styles.txt2}>Manoj Kumar</Text>
      <Text style={styles.txt3}>Mumbai,Malda</Text>

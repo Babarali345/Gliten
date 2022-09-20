@@ -6,7 +6,7 @@ import {
   View,
   ScrollView,
 } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
 import {
@@ -21,7 +21,30 @@ import Recently_Added_Property from '../../compnanat/Recently_Added_Property';
 import Buying_Home_List from '../../compnanat/Buying_Home_List';
 import Top_Articals from '../../compnanat/Top_Articals';
 import HandPicked_ResidentianalList from '../../compnanat/HandPicked_ResidentianalList';
+import FiterOptionList from '../../compnanat/FiterOptionList';
 export default function Home({navigation}) {
+  const [selectedItem,setSelectedItem]=useState('Buy')
+
+  const handleSearch=()=>{
+    if(selectedItem==='Building Construction' ){
+      navigation.navigate(SCREENS.MoreUserProfile,{
+        from:'Builder'
+      })
+    }
+    else if(selectedItem==='Architect' ){
+      navigation.navigate(SCREENS.MoreUserProfile,{
+        from:'Architect'
+      })
+    }
+   else if(selectedItem==='Builder' ){
+      navigation.navigate(SCREENS.MoreUserProfile,{
+        from:'Builder'
+      })
+    }
+    else{
+      navigation.navigate(SCREENS.FilterTabs)
+    }
+  }
   return (
     <ScrollView
       style={styles.Container}
@@ -76,8 +99,15 @@ export default function Home({navigation}) {
               right:0
 
             }}
+            onPress={handleSearch}
           />
       </ImageBackground>
+      <FiterOptionList
+      onSelecItem={(item)=>{
+        setSelectedItem(item)
+      }}
+      />
+       
       <GetStartedList />
       <Recently_Added_Property />
       <Buying_Home_List />
@@ -138,8 +168,8 @@ const styles = StyleSheet.create({
   },
   postProperty: {
     backgroundColor: COLORS.golden,
-    paddingHorizontal: wp('4%'),
-    paddingVertical: hp('0.6%'),
-    borderRadius: wp('3%'),
+    paddingHorizontal: wp('5%'),
+    paddingVertical: hp('0.4%'),
+    borderRadius: wp('5%'),
   },
 });

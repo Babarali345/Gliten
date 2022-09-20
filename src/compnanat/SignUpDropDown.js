@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
   },
   txtnavTitle: {
     color: COLORS.black,
-    fontSize: rf(1.5),
+    fontSize: rf(1.9),
     fontFamily: FONTFAMILY.SemiBold,
     alignSelf: 'center',
     marginStart: wp('2%'),

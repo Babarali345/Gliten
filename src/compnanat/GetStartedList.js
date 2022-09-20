@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   txtTitle: {
     color: COLORS.black,
     fontSize: rf(2.3),
-    marginTop: hp('5%'),
+    // marginTop: hp('5%'),
     fontFamily: FONTFAMILY.Bold,
   },
  

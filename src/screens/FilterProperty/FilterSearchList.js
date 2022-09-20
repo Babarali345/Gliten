@@ -1,16 +1,22 @@
-import { StyleSheet, Text, View ,FlatList,Image} from 'react-native'
+import { StyleSheet, Text, View ,FlatList,Image,TouchableOpacity} from 'react-native'
 import React from 'react'
-import { COLORS, FONTFAMILY, STYLES } from '../../constants/them'
+import { COLORS, FONTFAMILY, SCREENS, STYLES } from '../../constants/them'
 import {
   heightPercentageToDP as hp,
   responsiveFontSize as rf,
   widthPercentageToDP as wp,
 } from '../../common/responsiveFunction';
 import ShortListEmptyComponanat from '../../compnanat/ShortListedEpmtyComponanat';
-export default function FilterSearchList() {
+
+export default function FilterSearchList({navigation}) {
   const rendorActivity = ({item}) => {
     return (
-      <View style={styles.Container2}>
+      <TouchableOpacity style={styles.Container2}
+      activeOpacity={0.8}
+      onPress={()=>{
+        navigation.navigate(SCREENS.PropertyDetailScreen)
+      }}
+      >
         <View style={[STYLES.shadow]}>
           <Image
             source={{
@@ -32,7 +38,7 @@ export default function FilterSearchList() {
             </Text>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   };
   return (

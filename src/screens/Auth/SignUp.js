@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   },
   txt: {
     color: COLORS.black,
-    fontSize: rf(2),
+    fontSize: rf(2.7),
     fontFamily: FONTFAMILY.Bold,
   },
   txt1: {

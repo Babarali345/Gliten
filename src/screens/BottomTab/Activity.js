@@ -1,7 +1,7 @@
-import {FlatList, Image, Pressable, StyleSheet, Text, View} from 'react-native';
+import {FlatList, Image, Pressable, StyleSheet, Text, View,TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import Header from '../../compnanat/Header';
-import {COLORS, FONTFAMILY, STYLES} from '../../constants/them';
+import {COLORS, FONTFAMILY, SCREENS, STYLES} from '../../constants/them';
 import {
   heightPercentageToDP as hp,
   responsiveFontSize as rf,
@@ -9,7 +9,7 @@ import {
 } from '../../common/responsiveFunction';
 import {ListEmptySvg} from '../../compnanat/svg';
 import ActivityListEmptyComponanat from '../../compnanat/ActivityListEmptyComponanat';
-export default function Activity() {
+export default function Activity({navigation}) {
   const [tabPressed, setTabPresed] = useState();
   const [data,setData]=useState(Data)
 
@@ -50,7 +50,12 @@ export default function Activity() {
 
   const rendorActivity = ({item}) => {
     return (
-      <View style={styles.Container2}>
+      <TouchableOpacity style={styles.Container2}
+      activeOpacity={0.8}
+      onPress={()=>{
+        navigation.navigate(SCREENS.PropertyDetailScreen)
+      }}
+      >
         <View style={[STYLES.shadow]}>
           <Image
             source={{
@@ -72,7 +77,7 @@ export default function Activity() {
             </Text>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   };
   return (

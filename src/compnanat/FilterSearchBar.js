@@ -1,4 +1,4 @@
-import {StyleSheet, Text, TextInput, View} from 'react-native';
+import {StyleSheet, Text, TextInput, View,TouchableOpacity} from 'react-native';
 import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {
@@ -8,8 +8,9 @@ import {
 } from '../common/responsiveFunction';
 import {COLORS, FONTFAMILY} from '../constants/them';
 import { FilterSearchIcon } from './svg';
-export default function FilterSearchBar() {
+export default function FilterSearchBar({onPress}) {
   return (
+    <View>
     <View style={styles.container}>
       <Ionicons name="ios-search-outline" size={rf(2.5)} color={COLORS.Greyscale} />
       <TextInput style={styles.inputtxt} 
@@ -17,7 +18,14 @@ export default function FilterSearchBar() {
       placeholderTextColor={COLORS.Greyscale}
       />
       <FilterSearchIcon />
-
+    </View>
+      <TouchableOpacity style={styles.moreContainer}
+           activeOpacity={0.8}
+           onPress={onPress}
+           >
+            <Text style={styles.moreTxt}>+ 3 More</Text>
+            </TouchableOpacity>
+            
     </View>
   );
 }
@@ -41,4 +49,13 @@ const styles = StyleSheet.create({
     fontFamily: FONTFAMILY.SemiBold,
     marginTop: hp('2%'),
   },
+  moreTxt:{
+    color:COLORS.primary,
+    alignSelf:'flex-end',
+    fontFamily:FONTFAMILY.Bold
+  },
+  moreContainer:{
+    alignSelf:'flex-end',
+    marginTop:hp('1%')
+  }
 });

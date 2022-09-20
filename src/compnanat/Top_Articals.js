@@ -5,13 +5,15 @@ import {
   widthPercentageToDP as wp,
   responsiveFontSize as rf,
 } from '../common/responsiveFunction';
-import {COLORS, FONTFAMILY} from '../constants/them';
+import {COLORS, FONTFAMILY, SCREENS} from '../constants/them';
+import {useNavigation} from '@react-navigation/native';
 export default function Top_Articals() {
+  const navigation = useNavigation();
   const renderItem = ({item, index}) => {
     return (
       <Pressable
         onPress={() => {
-          // setIsloading(!isLoading)
+          navigation.navigate(SCREENS.PropertyDetailScreen);
         }}
         style={({pressed}) => [
           {
@@ -27,10 +29,10 @@ export default function Top_Articals() {
           style={styles.images}
         />
         <View style={styles.txtContainer}>
-          <Text style={styles.itemTitle}>Top 5 waterfront investments in Mumbai</Text>
-          <Text style={styles.txt2}>
-          Aug 08, 2022
-        </Text>
+          <Text style={styles.itemTitle}>
+            Top 5 waterfront investments in Mumbai
+          </Text>
+          <Text style={styles.txt2}>Aug 08, 2022</Text>
         </View>
       </Pressable>
     );
@@ -55,27 +57,24 @@ export default function Top_Articals() {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: wp('2%'),
-    marginTop:hp('1%')
+    marginTop: hp('1%'),
   },
-  itemContainer:{
-flexDirection:'row',
+  itemContainer: {
+    flexDirection: 'row',
   },
   itemTitle: {
     color: COLORS.black,
     fontSize: rf(1.5),
     fontFamily: FONTFAMILY.SemiBold,
-    width:wp('35%'),
-   
+    width: wp('35%'),
   },
-  txtContainer:{
-    marginStart:wp('2%'),
-    
+  txtContainer: {
+    marginStart: wp('2%'),
   },
   recentylTxt: {
     color: COLORS.black,
     fontSize: rf(2.3),
     fontFamily: FONTFAMILY.Bold,
-    
   },
   images: {
     height: hp('7%'),
@@ -87,10 +86,7 @@ flexDirection:'row',
     fontSize: rf(1.3),
     fontFamily: FONTFAMILY.Medium,
     marginTop: hp('1%'),
-  
-    
   },
-  
 });
 
 const Data = [

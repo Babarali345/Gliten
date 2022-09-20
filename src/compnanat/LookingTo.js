@@ -41,7 +41,8 @@ export default function LookingTo() {
           numColumns={3}
           contentContainerStyle={{
             paddingBottom: hp('8%'),
-          }}/>
+          }}
+          />
     </View>
   )
 }

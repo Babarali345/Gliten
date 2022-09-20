@@ -7,14 +7,16 @@ import {
   widthPercentageToDP as wp,
 } from '../../common/responsiveFunction';
 import ProfileBox from '../../compnanat/ProfileBox';
-export default function MoreUserProfile() {
+export default function MoreUserProfile({route}) {
   const renderItem = () => {
-    return <ProfileBox />;
+    return <ProfileBox 
+    from={route.params.from}
+    />;
   };
   return (
     <View style={styles.container}>
-      <Text style={[styles.txt]}>Architect Profiles </Text>
-      <Text style={[styles.txt1]}>Architecture in mumbai</Text>
+      <Text style={[styles.txt]}>{route.params.from} Profiles </Text>
+      <Text style={[styles.txt1]}>{route.params.from} in mumbai</Text>
       <FlatList
         data={[1, 2, 3]}
         renderItem={renderItem}

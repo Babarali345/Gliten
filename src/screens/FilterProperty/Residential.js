@@ -4,7 +4,8 @@ import {
   Text,
   View,
   Switch,
-  Animated
+  Animated,
+  TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
 import {COLORS, FONTFAMILY, SCREENS} from '../../constants/them';
@@ -28,7 +29,57 @@ import LookingTo from '../../compnanat/LookingTo';
 export default function Residential({navigation}) {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
-  
+  const [selecLookTo, setLookTo] = useState(0);
+  const vbanimationHeight = React.useRef(new Animated.Value(0)).current;
+  const [VBcollapsed, setVBCollapsed] = React.useState(true);
+  React.useEffect(() => {
+    if (VBcollapsed) {
+      vBcollapseView();
+    } else {
+      vBexpandView();
+    }
+  }, [VBcollapsed]);
+
+  const vBtoggleCollapsed = () => {
+    setVBCollapsed(!VBcollapsed);
+  };
+
+  const vBcollapseView = () => {
+    Animated.timing(vbanimationHeight, {
+      duration: 500,
+      toValue: 0,
+      useNativeDriver: false,
+    }).start();
+  };
+
+  const vBexpandView = () => {
+    Animated.timing(vbanimationHeight, {
+      duration: 700,
+      toValue: 3000,
+      useNativeDriver: false,
+    }).start();
+  };
+  const rendorItem = ({item, index}) => {
+    return (
+      <TouchableOpacity
+        key={index}
+        style={[
+          styles.itemContainer,
+          {
+            borderColor:
+              selecLookTo === index ? COLORS.primary : COLORS.Greyscale,
+            backgroundColor:
+              selecLookTo === index ? COLORS.skyBlueLight : COLORS.skyBlueDark,
+          },
+        ]}
+        activeOpacity={0.8}
+        onPress={() => {
+          setLookTo(index);
+        }}>
+        <Text style={styles.txt2}>{item.name}</Text>
+      </TouchableOpacity>
+    );
+  };
 
   const PropertyImagVideo = ({title}) => {
     return (
@@ -47,28 +98,60 @@ export default function Residential({navigation}) {
   return (
     <View style={styles.container}>
       <View>
+        <Text style={styles.txt1}>Looking to</Text>
         <FlatList
-          data={null}
-          renderItem={null}
+          data={LookToData}
+          renderItem={rendorItem}
+          keyExtractor={(item, index) => index.toString()}
+          listKey={item => item.name.toString()}
+          numColumns={3}
           contentContainerStyle={{
-            paddingBottom: hp('8%'),
+            paddingBottom:hp('8%')
           }}
           ListFooterComponent={() => {
             return (
               <>
-              <LookingTo/>
-                <FilterSearchBar />
-                <Budget />
-                <NoOfBedroomList />
-                <TypeOfProperty />
-                <BuildYear />
-                <Locality />
-                <Amenities />
-                <PropertyImagVideo title={'Properties Photo'} />
-                <PropertyImagVideo title={'Properties Video'} />
-                <Furnished_Area />
-                <Area />
-                <Possesion_Status />
+                {/* <LookingTo/> */}
+                <FilterSearchBar 
+                onPress={()=>{
+                  vBtoggleCollapsed();
+                }}
+                />
+                <Animated.View
+                  style={
+                    {
+                      maxHeight: vbanimationHeight,
+                    }
+                  }>
+                      {!VBcollapsed ? (
+                    <>
+                   <Budget />
+                    </>
+                  ) : null}
+                 
+                  <NoOfBedroomList />
+                  <TypeOfProperty />
+                  <BuildYear />
+                  <Locality />
+                  <Amenities />
+                  
+                  {!VBcollapsed?
+                  <>
+                  <PropertyImagVideo title={'Properties Photo'} />
+                  <PropertyImagVideo title={'Properties Video'} />
+                  </>
+                  :null
+                }
+                
+                  <Furnished_Area />
+                  {!VBcollapsed ? (
+                    <>
+                   <Area />
+                    </>
+                  ) : null}
+                  
+                  <Possesion_Status />
+                </Animated.View>
                 <Button
                   title={'Search'}
                   style={{marginTop: hp('8%')}}
@@ -126,4 +209,37 @@ const styles = StyleSheet.create({
   },
 });
 
-
+const LookToData = [
+  {
+    id: 1,
+    name: 'Buy',
+  },
+  {
+    id: 2,
+    name: 'RENT',
+  },
+  {
+    id: 3,
+    name: 'Student/PG',
+  },
+  {
+    id: 4,
+    name: 'Cultivable Land',
+  },
+  {
+    id: 5,
+    name: 'Office',
+  },
+  {
+    id: 6,
+    name: 'Architect',
+  },
+  {
+    id: 7,
+    name: 'Sign Board',
+  },
+  {
+    id: 8,
+    name: 'Builder',
+  },
+];

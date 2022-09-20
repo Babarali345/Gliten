@@ -5,13 +5,15 @@ import {
   widthPercentageToDP as wp,
   responsiveFontSize as rf,
 } from '../common/responsiveFunction';
-import {COLORS, FONTFAMILY, STYLES} from '../constants/them';
+import {COLORS, FONTFAMILY, SCREENS, STYLES} from '../constants/them';
+import {useNavigation} from '@react-navigation/native';
 export default function HandPicked_ResidentianalList() {
+  const navigation = useNavigation();
   const renderItem = ({item, index}) => {
     return (
       <Pressable
         onPress={() => {
-          // setIsloading(!isLoading)
+          navigation.navigate(SCREENS.PropertyDetailScreen);
         }}
         style={({pressed}) => [
           {
@@ -26,10 +28,8 @@ export default function HandPicked_ResidentianalList() {
           }}
           style={styles.images}
         />
-        <View style={[styles.txtContainer,STYLES.shadow]}>
-          <Text style={styles.itemTitle}>
-          Emaar Palm Heights
-          </Text>
+        <View style={[styles.txtContainer, STYLES.shadow]}>
+          <Text style={styles.itemTitle}>Emaar Palm Heights</Text>
           <Text style={styles.txt2}>3 BHK Apartment, Sector-77 , Gurgaon</Text>
           <Text style={styles.txt3}>₹31.1 L</Text>
         </View>
@@ -56,15 +56,14 @@ export default function HandPicked_ResidentianalList() {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: wp('2%'),
-    marginTop:hp('1%'),
-    
+    marginTop: hp('1%'),
   },
   itemContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     marginRight: wp('18%'),
   },
-    itemTitle: {
+  itemTitle: {
     color: COLORS.black,
     fontSize: rf(1.5),
     fontFamily: FONTFAMILY.SemiBold,
@@ -72,13 +71,13 @@ const styles = StyleSheet.create({
   txtContainer: {
     backgroundColor: COLORS.white,
     position: 'absolute',
-    padding:wp('2%'),
+    padding: wp('2%'),
     right: -70,
-    alignItems:'center',
-    justifyContent:'center',
-    width:wp('40%'),
-    borderRadius:wp('3%'),
-    height:hp('11%'),
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: wp('40%'),
+    borderRadius: wp('3%'),
+    height: hp('11%'),
   },
   recentylTxt: {
     color: COLORS.black,
@@ -94,8 +93,8 @@ const styles = StyleSheet.create({
     color: COLORS.Greyscale,
     fontSize: rf(1.3),
     fontFamily: FONTFAMILY.Medium,
-    marginVertical:hp('0.5%'),
-    textAlign:'center'
+    marginVertical: hp('0.5%'),
+    textAlign: 'center',
   },
   txt3: {
     color: COLORS.black,

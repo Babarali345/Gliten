@@ -9,7 +9,7 @@ import {
 } from '../common/responsiveFunction';
 import { useNavigation } from '@react-navigation/native';
 
-export default function SearchBar({style}) {
+export default function SearchBar({style,onPress}) {
   const navigation=useNavigation()
   return (
     <Pressable
@@ -21,9 +21,7 @@ export default function SearchBar({style}) {
         style,
         STYLES.shadow,
       ]}
-      onPress={()=>{
-        navigation.navigate(SCREENS.FilterTabs)
-      }}
+      onPress={onPress}
       >
       <TextInput
         placeholder="Search cities,localities,projects etc."

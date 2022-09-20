@@ -5,14 +5,17 @@ import {
   widthPercentageToDP as wp,
   responsiveFontSize as rf,
 } from '../common/responsiveFunction';
-import {COLORS, FONTFAMILY, STYLES} from '../constants/them';
+import {COLORS, FONTFAMILY, SCREENS, STYLES} from '../constants/them';
+import { useNavigation } from '@react-navigation/native';
 export default function Recently_Added_Property() {
   const [isLoading,setIsloading]=useState(false)
+  const navigation=useNavigation()
   const renderItem = ({item, index}) => {
     return (
       <Pressable
         onPress={() => {
           // setIsloading(!isLoading)
+          navigation.navigate(SCREENS.PropertyDetailScreen)
         }}
         style={({pressed}) => [
           {
