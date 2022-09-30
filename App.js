@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {StyleSheet,SafeAreaView} from 'react-native';
 import Toast, {BaseToast} from 'react-native-toast-message';
-
+import SplashScreen from 'react-native-splash-screen'
 import {
   responsiveFontSize as rf,
   heightPercentageToDP as hp,
@@ -9,7 +9,11 @@ import {
 import {COLORS, FONTFAMILY} from './src/constants/them';
 import MainNavigation from './src/navigation/MainNavigation';
 
+
 const App = () => {
+  useEffect(()=>{
+    SplashScreen.hide()
+    },[])
   const toastConfig = {
     success: props => (
       <BaseToast

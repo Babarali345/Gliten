@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
   postProperty: {
     backgroundColor: COLORS.golden,
     paddingHorizontal: wp('5%'),
-    paddingVertical: hp('0.4%'),
+    paddingVertical: hp('0.6%'),
     borderRadius: wp('5%'),
   },
 });
